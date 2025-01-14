@@ -1,1 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teknisk retning - PIT</title>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* CSS Reset */
+      /* 1. Use a more-intuitive box-sizing model */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      /* 2. Remove default margin */
+      * {
+        margin: 0;
+      }
+      body {
+        /* 3. Add accessible line-height */
+        line-height: 1.5;
+        /* 4. Improve text rendering */
+        -webkit-font-smoothing: antialiased;
+      }
+      /* 5. Improve media defaults */
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      /* 6. Inherit fonts for form controls */
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      /* 7. Avoid text overflows */
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+      }
+      /* 8. Improve line wrapping */
+      p {
+        text-wrap: pretty;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-wrap: balance;
+      }
+      /*
+        9. Create a root stacking context
+        */
+      #root,
+      #__next {
+        isolation: isolate;
+      }
+
+      /* Application CSS*/
+      body {
+        font-family: Roboto;
+      }
+
+      main {
+        container: main / inline-size;
+      }
+
+      .box {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 1rem;
+      }
+
+      /* Section 1 */
+      .section-1 {
+        container: section-1 / inline-size;
+      }
+
+      .section-1-top-item-image {
+        position: relative;
+        height: 12rem;
+      }
+
+      @container section-1 (min-width: 900px) {
+        .section-1-top-item {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+          width: calc(50% - 2.5rem);
+          height: 8rem;
+        }
+
+        .section-1-top-item-1-image {
+          top: -2rem;
+        }
+
+        .section-1-top-item-2-image {
+          top: -1rem;
+        }
+      }
+
+      @container section-1 (max-width: 900px) and (min-width: 500px) {
+        .section-1-top-item {
+          display: grid;
+          gap: 1rem;
+          width: calc(50% - 2.5rem);
+        }
+
+        .section-1-top-item-2-image {
+          top: 1rem;
+        }
+      }
+
+      @container section-1 (min-width: 500px) {
+        .section-1-top-container {
+          display: flex;
+          gap: 5rem;
+          flex-wrap: wrap;
+        }
+
+        .section-1-text-cols-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 2rem;
+        }
+      }
+
+      @container section-1 (max-width: 500px) {
+        .section-1-top-container {
+          display: grid;
+          gap: 1rem;
+        }
+
+        .section-1-top-item {
+          display: grid;
+          gap: 2rem;
+          text-align: center;
+        }
+
+        .section-1-top-item-image {
+          margin: 0 auto;
+        }
+
+        .section-1-top-item-2-image {
+          top: 2rem;
+        }
+
+        .section-1-text-cols-container {
+          display: grid;
+          gap: 2rem;
+        }
+      }
+
+      /* Section 2 and 3 */
+      @container main (max-width: 1000px) {
+        .section-2,
+        .section-3 {
+          grid-column: 1 / span 2;
+        }
+
+        .section-3 {
+          padding-bottom: 3rem;
+        }
+      }
+
+      /* Section 4 */
+      .section-4 {
+        container: section-4 / inline-size;
+      }
+
+      .section-4-image {
+        position: absolute;
+        width: 16rem;
+        bottom: 2rem;
+      }
+
+      @container section-4 (min-width: 500px) {
+        .section-4-image {
+          left: 38%;
+        }
+      }
+
+      @container section-4 (max-width: 500px) {
+        .section-4-image {
+          left: 17%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header style="display: grid; gap: 1.5rem; padding: 2rem">
+      <div
+        style="
+          display: flex;
+          gap: 2rem;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h1 style="text-transform: uppercase; color: #00263e">Retninger</h1>
+        <img
+          src="images/politiet_logo.jpg"
+          alt="Politiets logo"
+          style="height: 2.5rem; width: auto"
+        />
+      </div>
+      <p style="font-size: 20px">
+        Retningene i PIT skal sikre at vi lager gode og trygge tjenester som
+        bidrar til å løse samfunnsoppdraget.
+      </p>
+    </header>
+    <main
+      style="
+        padding: 2rem;
+        background: #d0e2f3;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+      "
+    >
+      <section
+        class="box section-1"
+        style="
+          display: grid;
+          gap: 2rem;
+          margin-top: 2rem;
+          grid-column: 1 / span 2;
+        "
+      >
+        <div class="section-1-top-container">
+          <div class="section-1-top-item">
+            <img
+              src="images/innbygger.svg"
+              alt="Mann som smiler"
+              class="section-1-top-item-image section-1-top-item-1-image"
+            />
+            <p>
+              <strong style="color: #00263e">U T S I D E</strong><br />
+              <span>Innbyggerne vi er til for</span>
+            </p>
+          </div>
+          <div class="section-1-top-item">
+            <img
+              src="images/politidame.svg"
+              alt="Politidame som snakker i politiradioen"
+              class="section-1-top-item-image section-1-top-item-2-image"
+            />
+            <p>
+              <strong style="color: #00263e">I N N S I D E </strong><br />
+              <span>Ansatte som leverer på samfunnsoppdraget</span>
+            </p>
+          </div>
+        </div>
+        <div style="height: 2px; background: #d0e2f3"></div>
+        <section style="display: grid; gap: 2rem">
+          <p>
+            Vi ønsker å levere tjenester hvor
+            <strong>BRUKEROPPLEVELSEN</strong> bidrar til at politiet oppfattes
+            som
+          </p>
+          <div class="section-1-text-cols-container">
+            <p>
+              <strong>trygge og tillitsvekkende</strong><br />
+              Politiet er troverdige og evner å ivareta behov på tvers for å
+              lage et trygt samfunn for alle
+            </p>
+            <p>
+              <strong>seriøse og rettferdige</strong><br />
+              Politiet skal være lett å komme i kontakt med, til stede på ulike
+              arenaer og i relevant form.
+            </p>
+            <p>
+              <strong>tilgjengelige og til stede</strong><br />
+              Politiet skal håndheve loven på en god måte og vise empati,
+              forståelse og være lyttende.
+            </p>
+          </div>
+        </section>
+      </section>
+      <section class="box section-2">
+        <div style="display: grid; gap: 2rem">
+          <p>Vi jobber sammen i <strong>TEAM</strong> som</p>
+          <ul>
+            <li>er trygge</li>
+            <li>forstår brukerens behov</li>
+            <li>jobber tverrfagelig</li>
+            <li>skaper fart og flyt</li>
+            <li>lærer og eksperimenterer</li>
+            <li>jobber etter mål</li>
+          </ul>
+        </div>
+        <img
+          src="images/politiapp.svg"
+          alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
+          style="width: 100%; max-width: 20rem; margin: 0 auto"
+        />
+      </section>
+      <section class="section-3">
+        <section class="box" style="position: relative; padding-bottom: 12rem">
+          <div style="display: grid; gap: 2rem">
+            <p>vi sikrer at vår <strong>TEKNOLOGI</strong> er</p>
+            <ul>
+              <li>løst koblet</li>
+              <li>datadrevet</li>
+              <li>pålitelig</li>
+              <li>cloud first</li>
+              <li>cloud native</li>
+            </ul>
+          </div>
+          <img
+            src="images/kontordame.svg"
+            alt="Dame ser på datamaskin skjerm. Grafisk illustrasjon av Norge i bakgrunnen."
+            style="
+              max-width: 18rem;
+              margin: 0 auto;
+              position: absolute;
+              bottom: -3.5rem;
+              left: 12%;
+            "
+          />
+        </section>
+      </section>
+      <section
+        class="section-4"
+        style="
+          grid-column: 1 / span 2;
+          padding-bottom: 15rem;
+          position: relative;
+        "
+      >
+        <section
+          class="box"
+          style="display: grid; gap: 2rem; padding-bottom: 10rem"
+        >
+          <p>Du og jeg er <strong>FOLK</strong> i PIT. Sammen skal vi</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 3rem">
+            <div>
+              <ul>
+                <li>lære og utvikle oss</li>
+                <li>samarbeide på tvers av fagområder</li>
+                <li>gi og få feedback måle for å bli bedre</li>
+                <li>være åpne og transparente</li>
+                <li>eie helheten</li>
+                <li>ville hverandre vel</li>
+              </ul>
+            </div>
+            <div>
+              <b>Jeg bidrar ved å</b><br />
+              <ul>
+                <li>være nysgjerrig på andres perspektiv</li>
+                <li>bruke tid på problemforståelse</li>
+                <li>ta initiativ</li>
+                <li>dele</li>
+              </ul>
+            </div>
+            <div>
+              <b>Som leder vil jeg i tillegg</b><br />
+              <ul>
+                <li>sette retning</li>
+                <li>prioritere verdi</li>
+                <li>tilrettelegge</li>
+                <li>coache</li>
+                <li>gå foran som et godt eksempel</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <img
+          src="images/mannogdame_app.svg"
+          alt="Mann og dame ser på nettbrett"
+          class="section-4-image"
+        />
+      </section>
+    </main>
+  </body>
+</html>
