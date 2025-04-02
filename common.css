@@ -25,11 +25,21 @@
     font-family: Roboto;
   }
 
+  main {
+    container: main / inline-size;
+  }
+
   tr-box {
-    display: block;
     background-color: var(--box-background);
     padding: var(--box-padding);
     border-radius: var(--box-radius);
+  }
+
+  /* All web components must have display: block */
+  tr-box,
+  tr-header,
+  tr-footer {
+    display: block;
   }
 }
 
