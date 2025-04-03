@@ -43,13 +43,32 @@
     flex: 1;
   }
 
-  /* All web components must have display: block */
+  tr-fancy-link {
+    border-bottom: 3px solid transparent;
+    position: relative;
+    top: 3px;
+    padding-bottom: 3px;
+
+    &:hover {
+      border-color: var(--color-brightyellow, #fdda25);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  /* All web components must have display value */
   tr-box,
   tr-header,
   tr-footer,
   tr-verktoykasse,
   tr-fill-content {
     display: block;
+  }
+
+  tr-fancy-link {
+    display: inline-block;
   }
 }
 

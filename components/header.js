@@ -19,17 +19,6 @@ class Header extends HTMLElement {
                         align-items: center;
                     }
 
-                    nav a, 
-                    .retninger-logo span {
-                        border-bottom: 3px solid transparent;
-                        position: relative;
-                        top: 3px;
-
-                        &:hover {
-                            border-color: var(--color-brightyellow, #FDDA25);
-                        }
-                    }
-
                     a {
                         color: white;
                         text-decoration: none;
@@ -82,14 +71,24 @@ class Header extends HTMLElement {
         <header class="tr-header">
             <a class="retninger-logo" href="/">
                 <img src="/images/logo.svg" alt="" style="height: 1.75rem; width: auto;" />
-                <span style="font-size: 1.2rem;">Retninger</span>
+                <tr-fancy-link>
+                    <span style="font-size: 1.2rem;">Retninger</span>
+                </tr-fancy-link>
             </a>
             <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
             <nav>
-                <a href="/brukeropplevelse">Brukeropplevelse</a>
-                <a href="/team">Team</a>
-                <a href="/teknologi">Teknologi</a>
-                <a href="/folk">Folk</a>
+                <tr-fancy-link>
+                    <a href="/brukeropplevelse">Brukeropplevelse</a>
+                 </tr-fancy-link>
+                 <tr-fancy-link>
+                    <a href="/team">Team</a>
+                </tr-fancy-link>
+                <tr-fancy-link>
+                    <a href="/teknologi">Teknologi</a>
+                </tr-fancy-link>
+                <tr-fancy-link>
+                    <a href="/folk">Folk</a>
+                </tr-fancy-link>
             </nav>
         </header>`;
   }
