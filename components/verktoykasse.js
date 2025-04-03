@@ -13,7 +13,7 @@ class Verktoykasse extends HTMLElement {
             }
 
             .content {
-                padding: 2.5rem 2rem 2.25rem;
+                padding: 2.5rem var(--subpage-content-x-padding, 2rem) 2.25rem;
                 max-width: var(--subpage-max-width);
                 margin: 0 auto;
             }

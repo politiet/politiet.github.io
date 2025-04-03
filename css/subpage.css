@@ -1,8 +1,13 @@
 :root {
   --subpage-max-width: 1096px;
+  --subpage-content-x-padding: 2rem;
 }
 
-@layer utility {
+@media (max-width: 600px) {
+  :root {
+    --subpage-content-x-padding: 1.33rem;
+    --subpage-content-x-padding: 1.33rem;
+  }
 }
 
 @layer common {
@@ -20,7 +25,10 @@
     max-width: var(--subpage-max-width);
     margin-left: auto;
     margin-right: auto;
-    padding: 3rem 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: var(--subpage-content-x-padding, 2rem);
+    padding-right: var(--subpage-content-x-padding, 2rem);
     display: grid;
     gap: 4rem;
   }
