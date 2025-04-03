@@ -4,6 +4,7 @@
   --box-background: white;
   --box-padding: 2rem;
   --box-radius: 1rem;
+  --faded-separator: #c9cee4;
 }
 
 @layer utility {
