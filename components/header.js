@@ -13,7 +13,6 @@ class Header extends HTMLElement {
                 padding: 1rem 1.5rem 1rem 1.25rem;
                 color: white;
                 position: relative;
-                container: header / inline-size;
             }
 
             nav {

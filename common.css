@@ -21,6 +21,11 @@
 }
 
 @layer common {
+  html,
+  body {
+    height: 100%;
+  }
+
   body {
     font-family: Roboto;
   }
@@ -38,7 +43,8 @@
   /* All web components must have display: block */
   tr-box,
   tr-header,
-  tr-footer {
+  tr-footer,
+  tr-verktoykasse {
     display: block;
   }
 }
