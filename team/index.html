@@ -26,7 +26,57 @@
         container: section-1 / inline-size;
       }
 
-      @container section-1 (min-width: 900px) {
+      .section-1-main-header {
+        font-size: 2em;
+      }
+
+      .section-1-content {
+        display: grid;
+      }
+
+      .section-1-image {
+        img {
+          width: 30rem;
+          height: auto;
+          margin: 0 auto;
+        }
+      }
+
+      @container main (min-width: 800px) {
+        .section-1 {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2.5rem;
+        }
+
+        .section-1-main-header {
+          font-size: 2em;
+        }
+
+        .section-1-content {
+          flex: 1;
+          gap: 1.75rem;
+        }
+
+        .section-1-image {
+          flex: 1;
+        }
+      }
+
+      @container main (max-width: 800px) {
+        .section-1 {
+          display: grid;
+          gap: 1.75rem;
+        }
+
+        .section-1-content {
+          gap: 1rem;
+        }
+
+        .section-1-image {
+          order: -1;
+          text-align: center;
+        }
       }
     </style>
   </head>
@@ -34,19 +84,18 @@
     <tr-header></tr-header>
     <tr-fill-content>
       <main style="padding: 2rem; display: grid; gap: 2rem">
-        <section
-          class="section-1"
-          style="display: flex; gap: 2rem; flex-wrap: wrap"
-        >
-          <div style="flex: 1; display: grid; gap: 2rem">
-            <h1 style="font-size: 2em">Retning for Team</h1>
+        <section class="section-1">
+          <div class="section-1-content">
+            <h1 class="section-1-main-header">Retning for Team</h1>
             <p>
               Retning for team består av 6 viktige prinsipper. Alle prinsippene
               har som utgangspunkt i at personer med ulik kompetanse må
               samarbeide optimalt for å skape verdi for politiet.
             </p>
             <div>
-              <h2 style="margin-bottom: 1rem">
+              <h2
+                style="margin-bottom: 1rem; font-size: 1.1rem; font-weight: 500"
+              >
                 Retning for Team treffer på PITs ambisjon:
               </h2>
               <ul>
@@ -62,11 +111,10 @@
               </ul>
             </div>
           </div>
-          <div style="flex: 1">
+          <div class="section-1-image">
             <img
               src="/images/politiapp.svg"
               alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
-              style="width: 30rem; height: auto"
             />
           </div>
         </section>
