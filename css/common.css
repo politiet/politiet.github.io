@@ -5,6 +5,9 @@
   --box-padding: 2rem;
   --box-radius: 1rem;
   --faded-separator: #c9cee4;
+  --color-darkblue-500: #00263e;
+  --color-lightblue-300: #d0e2f3;
+  --color-brightyellow: #fdda25;
 }
 
 @layer utility {

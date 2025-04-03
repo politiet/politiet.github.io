@@ -9,7 +9,7 @@ class Verktoykasse extends HTMLElement {
     shadow.innerHTML = /* html */ `
         <style>
             .wrapper {
-                background: #D0E2F3;
+                background: var(--color-lightblue-300, #D0E2F3);
             }
 
             .content {

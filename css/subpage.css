@@ -1,10 +1,8 @@
 :root {
   --subpage-max-width: 1096px;
   --subpage-content-x-padding: 2rem;
-}
 
-@media (max-width: 600px) {
-  :root {
+  @media (max-width: 600px) {
     --subpage-content-x-padding: 1.33rem;
     --subpage-content-x-padding: 1.33rem;
   }

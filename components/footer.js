@@ -9,7 +9,7 @@ class Footer extends HTMLElement {
     shadow.innerHTML = /* html */ `
         <style>
           footer {
-            background: #00263e;
+            background: var(--color-darkblue-500, #D0E2F3);
             padding: 3rem 1.5rem 5rem 1.25rem;
           }
           
@@ -23,7 +23,7 @@ class Footer extends HTMLElement {
               top: 3px;
 
               &:hover {
-                  border-color: #FDDA25;
+                border-color: var(--color-brightyellow, #FDDA25);
               }
           }
 

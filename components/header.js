@@ -9,7 +9,7 @@ class Header extends HTMLElement {
     shadow.innerHTML = /* html */ `
         <style>
             header {
-                background: #00263e;
+                background: var(--color-darkblue-500, #00263e);
                 padding: 1rem 1.5rem 1rem 1.25rem;
                 color: white;
                 position: relative;
@@ -27,7 +27,7 @@ class Header extends HTMLElement {
                 top: 3px;
 
                 &:hover {
-                    border-color: #FDDA25;
+                    border-color: var(--color-brightyellow, #FDDA25);
                 }
             }
 
