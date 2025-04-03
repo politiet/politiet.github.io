@@ -5,84 +5,81 @@ class Header extends HTMLElement {
   }
 
   connectedCallback() {
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = /* html */ `
+    this.innerHTML = /* html */ `
         <style>
-            header {
-                background: var(--color-darkblue-500, #00263e);
-                padding: 1rem 1.5rem 1rem 1.25rem;
-                color: white;
-                position: relative;
-            }
+            @layer common {
+                .tr-header {
+                    background: var(--color-darkblue-500, #00263e);
+                    padding: 1rem 1.5rem 1rem 1.25rem;
+                    color: white;
+                    position: relative;
 
-            nav {
-                display: flex;
-                align-items: center;
-            }
+                    nav {
+                        display: flex;
+                        align-items: center;
+                    }
 
-            nav a, 
-            .retninger-logo span {
-                border-bottom: 3px solid transparent;
-                position: relative;
-                top: 3px;
+                    nav a, 
+                    .retninger-logo span {
+                        border-bottom: 3px solid transparent;
+                        position: relative;
+                        top: 3px;
 
-                &:hover {
-                    border-color: var(--color-brightyellow, #FDDA25);
-                }
-            }
+                        &:hover {
+                            border-color: var(--color-brightyellow, #FDDA25);
+                        }
+                    }
 
-            a {
-                color: white;
-                    text-decoration: none;
-            }
+                    a {
+                        color: white;
+                        text-decoration: none;
+                    }
 
-            .retninger-logo {
-                display: flex;
-                align-items: center; 
-                gap: .5rem;
-                grid-column: 1 / 1;
-            }
-            
-            @media (min-width: 1200px) {
-                .politi-logo {
-                    position: absolute;
-                    left: calc(50% - (115px / 2));
-                }
-            }
-            
-            @media (min-width: 800px) {
-                header {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    align-items: center;
-                }
+                    .retninger-logo {
+                        display: flex;
+                        align-items: center; 
+                        gap: .5rem;
+                        grid-column: 1 / 1;
+                    }
+                    
+                    @media (min-width: 1200px) {
+                        .politi-logo {
+                            position: absolute;
+                            left: calc(50% - (115px / 2));
+                        }
+                    }
+                    
+                    @media (min-width: 800px) {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        align-items: center;
 
-                nav {
-                    gap: 2.5rem;
-                }
-            }
-            
-            @media (max-width: 800px) {
-                header {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    row-gap: 1.25rem;
-                }
+                        nav {
+                            gap: 2.5rem;
+                        }
+                    }
+                    
+                    @media (max-width: 800px) {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        row-gap: 1.25rem;
 
-                .politi-logo {
-                    grid-column: 2 / 2;
-                    margin-left: auto;
-                }
+                        .politi-logo {
+                            grid-column: 2 / 2;
+                            margin-left: auto;
+                        }
 
-                nav {
-                    grid-column: 1 / span 2;
-                    justify-content: space-between;
-                    gap: 1rem;
+                        nav {
+                            grid-column: 1 / span 2;
+                            justify-content: space-between;
+                            gap: 1rem;
+                        }
+                    }
                 }
             }
         </style>
-        <header>
+        <header class="tr-header">
             <a class="retninger-logo" href="/">
                 <img src="/images/logo.svg" alt="" style="height: 1.75rem; width: auto;" />
                 <span style="font-size: 1.2rem;">Retninger</span>

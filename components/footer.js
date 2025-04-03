@@ -5,61 +5,62 @@ class Footer extends HTMLElement {
   }
 
   connectedCallback() {
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = /* html */ `
+    this.innerHTML = /* html */ `
         <style>
-          footer {
-            background: var(--color-darkblue-500, #D0E2F3);
-            padding: 3rem 1.5rem 5rem 1.25rem;
-          }
-          
-          nav {
-              font-size: .9em;
-            }
+          @layer common {
+            .tr-footer {
+              background: var(--color-darkblue-500, #D0E2F3);
+              padding: 3rem 1.5rem 5rem 1.25rem;
+              
+              nav {
+                  font-size: .9em;
+                }
 
-          nav a {
-              border-bottom: 3px solid transparent;
-              position: relative;
-              top: 3px;
+              nav a {
+                  border-bottom: 3px solid transparent;
+                  position: relative;
+                  top: 3px;
 
-              &:hover {
-                border-color: var(--color-brightyellow, #FDDA25);
+                  &:hover {
+                    border-color: var(--color-brightyellow, #FDDA25);
+                  }
               }
-          }
 
-          a {
-              color: white;
-                  text-decoration: none;
-          }
+              a {
+                  color: white;
+                      text-decoration: none;
+              }
 
-          @media (min-width: 600px) {
-            footer {
-              display: flex;
-              justify-content: space-between;
+              @media (min-width: 600px) {
+                display: flex;
+                justify-content: space-between;
+
+                nav {
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;
+                  gap: 2rem;
+                }
+              }
+
+              @media (max-width: 600px) {
+                display: grid;
+                gap: 1.5rem;
+
+                nav {
+                  display: grid;
+                  gap: 1.5rem;
+                  
+                  > * {
+                    width: fit-content;
+                  }
+                }
+              }
+
             }
-
-            nav {
-              display: flex;
-              flex-wrap: wrap;
-              align-items: center;
-              gap: 2rem;
-            }
           }
-
-          @media (max-width: 600px) {
-            footer {
-              display: grid;
-              gap: 1.5rem;
-            }
-
-            nav {
-              display: grid;
-              gap: 1.5rem;
-            }
-          }
-
         </style>
-        <footer>
+        <footer class="tr-footer">
             <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
             <nav>
                 <a href="/brukeropplevelse">BRUKEROPPLEVELSE</a>
