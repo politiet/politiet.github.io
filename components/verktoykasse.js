@@ -20,7 +20,7 @@ class Verktoykasse extends HTMLElement {
         </style>
         <section class="wrapper">
             <div class="content">
-                <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; margin-bottom: 2rem;">
                     <img src="/images/verktoy.svg" style="width: 90px; height: auto;" alt="Skrutrekker og skiftenøkkel i kryss" />
                     <h1 style="font-size: 1.75rem;">Verktøykasse</h1>
                 </div>

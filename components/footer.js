@@ -11,15 +11,9 @@ class Footer extends HTMLElement {
           footer {
             background: #00263e;
             padding: 3rem 1.5rem 5rem 1.25rem;
-            display: flex;
-            justify-content: space-between;
           }
           
           nav {
-              display: flex;
-              flex-wrap: wrap;
-              align-items: center;
-              gap: 2rem;
               font-size: .9em;
             }
 
@@ -36,6 +30,32 @@ class Footer extends HTMLElement {
           a {
               color: white;
                   text-decoration: none;
+          }
+
+          @media (min-width: 600px) {
+            footer {
+              display: flex;
+              justify-content: space-between;
+            }
+
+            nav {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 2rem;
+            }
+          }
+
+          @media (max-width: 600px) {
+            footer {
+              display: grid;
+              gap: 1.5rem;
+            }
+
+            nav {
+              display: grid;
+              gap: 1.5rem;
+            }
           }
 
         </style>

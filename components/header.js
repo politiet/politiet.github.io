@@ -18,7 +18,6 @@ class Header extends HTMLElement {
             nav {
                 display: flex;
                 align-items: center;
-                gap: 2.5rem;
             }
 
             nav a, 
@@ -58,6 +57,10 @@ class Header extends HTMLElement {
                     justify-content: space-between;
                     align-items: center;
                 }
+
+                nav {
+                    gap: 2.5rem;
+                }
             }
             
             @media (max-width: 800px) {
@@ -75,6 +78,7 @@ class Header extends HTMLElement {
                 nav {
                     grid-column: 1 / span 2;
                     justify-content: space-between;
+                    gap: 1rem;
                 }
             }
         </style>
