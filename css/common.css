@@ -21,11 +21,6 @@
 }
 
 @layer common {
-  html,
-  body {
-    height: 100%;
-  }
-
   body {
     font-family: Roboto;
   }
@@ -40,11 +35,16 @@
     border-radius: var(--box-radius);
   }
 
+  tr-fill-content {
+    flex: 1;
+  }
+
   /* All web components must have display: block */
   tr-box,
   tr-header,
   tr-footer,
-  tr-verktoykasse {
+  tr-verktoykasse,
+  tr-fill-content {
     display: block;
   }
 }

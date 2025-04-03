@@ -1,0 +1,24 @@
+:root {
+  --subpage-max-width: 1096px;
+}
+
+@layer utility {
+}
+
+@layer common {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    max-width: var(--subpage-max-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
