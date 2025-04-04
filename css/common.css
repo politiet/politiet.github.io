@@ -33,6 +33,22 @@
     container: main / inline-size;
   }
 
+  /* All web components must have display value */
+  tr-box,
+  tr-header,
+  tr-footer,
+  tr-verktoykasse,
+  tr-accordion-content,
+  tr-accordion-button,
+  tr-fill-content {
+    display: block;
+  }
+
+  tr-fancy-link {
+    display: inline-block;
+  }
+
+  /* Styles for specific web components */
   tr-box {
     background-color: var(--box-background);
     padding: var(--box-padding);
@@ -58,17 +74,26 @@
     }
   }
 
-  /* All web components must have display value */
-  tr-box,
-  tr-header,
-  tr-footer,
-  tr-verktoykasse,
-  tr-fill-content {
-    display: block;
+  tr-accordion-button {
+    &:not([data-initialized]) {
+      > * {
+        visibility: hidden;
+      }
+    }
   }
 
-  tr-fancy-link {
-    display: inline-block;
+  tr-accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+
+    &[data-visible] {
+      grid-template-rows: 1fr;
+    }
+
+    [data-accordion-content-wrapper] {
+      overflow: hidden;
+    }
   }
 }
 
