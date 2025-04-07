@@ -41,10 +41,7 @@ customElements.define("tr-accordion-content", AccordionContent);
 
 class AccordionButton extends HTMLElement {
   static observedAttributes = ["contentSelector"];
-  /**
-   * @type ClickEvent
-   */
-  clickEvent;
+  boundHandleClick;
   /**
    * @type ChildNode[] | Element
    */
@@ -59,6 +56,8 @@ class AccordionButton extends HTMLElement {
   }
 
   connectedCallback() {
+    this.boundHandleClick = this._handleOnClick.bind(this);
+
     // Initialize
     const openButton = this.querySelector('slot[name="open-button"]');
     this.openButtonHTML = openButton
@@ -111,26 +110,31 @@ class AccordionButton extends HTMLElement {
   }
 
   _addClickListener() {
-    this.clickEvent = this.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-
-      const target = this._getTarget();
-      const isVisible = this._getIsVisible(target);
-      if (isVisible) {
-        target.removeAttribute("data-visible");
-      } else {
-        target.setAttribute("data-visible", "true");
-      }
-
-      this._setButton();
-    });
+    this.addEventListener("click", this.boundHandleClick);
   }
 
   _removeClickListener() {
     if (this.clickEvent) {
-      this.removeEventListener(this.clickEvent);
+      this.removeEventListener("click", this.boundHandleClick);
     }
+  }
+
+  /**
+   * @param {MouseEvent} event
+   */
+  _handleOnClick(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const target = this._getTarget();
+    const isVisible = this._getIsVisible(target);
+    if (isVisible) {
+      target.removeAttribute("data-visible");
+    } else {
+      target.setAttribute("data-visible", "true");
+    }
+
+    this._setButton();
   }
 
   _setButton() {

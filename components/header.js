@@ -1,18 +1,27 @@
 class Header extends HTMLElement {
+  isThrottled = false;
+  boundHandleScroll;
+  initialScroll = true;
+
   constructor() {
     // Always call super first in constructor
     super();
   }
 
   connectedCallback() {
+    this.boundHandleScroll = this._handleScroll.bind(this);
+
     this.innerHTML = /* html */ `
         <style>
             @layer common {
-                .tr-header {
+                tr-header {
+                    display: block;
+                    position: sticky;
+                    top: 0;
                     background: var(--color-darkblue-500, #00263e);
                     padding: 1rem 1.5rem 1rem 1.25rem;
                     color: white;
-                    position: relative;
+                    transition: row-gap 0.3s ease-in-out;
 
                     nav {
                         display: flex;
@@ -24,13 +33,25 @@ class Header extends HTMLElement {
                         text-decoration: none;
                     }
 
+                    .retninger-logo,
+                    .politi-logo {
+                        /* Add transitions for smooth hide/show */
+                        transition: opacity 0.3s ease-in-out,
+                                    max-height 0.3s ease-in-out, /* Slightly longer for collapse */
+                                    margin 0.3s ease-in-out,
+                                    padding 0.3s ease-in-out,
+                                    border 0.3s ease-in-out;
+                        overflow: hidden; /* Needed for max-height transition */
+                        max-height: 200px;
+                    }
+
                     .retninger-logo {
                         display: flex;
                         align-items: center; 
                         gap: .5rem;
                         grid-column: 1 / 1;
                     }
-                    
+
                     @media (min-width: 1200px) {
                         .politi-logo {
                             position: absolute;
@@ -52,7 +73,6 @@ class Header extends HTMLElement {
                     @media (max-width: 800px) {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
-                        row-gap: 1.25rem;
 
                         .politi-logo {
                             grid-column: 2 / 2;
@@ -64,33 +84,91 @@ class Header extends HTMLElement {
                             justify-content: space-between;
                             gap: 1rem;
                         }
+
+                        &:not(.scrolled-past-top) {
+                            row-gap: 1.25rem;
+                        }
+
+                        &.scrolled-past-top {
+                            row-gap: 0;
+
+                            .retninger-logo, 
+                            .politi-logo {
+                                opacity: 0;
+                                max-height: 0;
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                border: none; /* Hide any borders */
+                            }
+                        }
                     }
                 }
             }
         </style>
-        <header class="tr-header">
-            <a class="retninger-logo" href="/">
-                <img src="/images/logo.svg" alt="" style="height: 1.75rem; width: auto;" />
-                <tr-fancy-link>
-                    <span style="font-size: 1.2rem;">Retninger</span>
-                </tr-fancy-link>
-            </a>
-            <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
-            <nav>
-                <tr-fancy-link>
-                    <a href="/brukeropplevelse">Brukeropplevelse</a>
-                 </tr-fancy-link>
-                 <tr-fancy-link>
-                    <a href="/team">Team</a>
+        <a class="retninger-logo" href="/">
+            <img src="/images/logo.svg" alt="" style="height: 1.75rem; width: auto;" />
+            <tr-fancy-link>
+                <span style="font-size: 1.2rem;">Retninger</span>
+            </tr-fancy-link>
+        </a>
+        <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
+        <nav>
+            <tr-fancy-link>
+                <a href="/brukeropplevelse">Brukeropplevelse</a>
                 </tr-fancy-link>
                 <tr-fancy-link>
-                    <a href="/teknologi">Teknologi</a>
-                </tr-fancy-link>
-                <tr-fancy-link>
-                    <a href="/folk">Folk</a>
-                </tr-fancy-link>
-            </nav>
-        </header>`;
+                <a href="/team">Team</a>
+            </tr-fancy-link>
+            <tr-fancy-link>
+                <a href="/teknologi">Teknologi</a>
+            </tr-fancy-link>
+            <tr-fancy-link>
+                <a href="/folk">Folk</a>
+            </tr-fancy-link>
+        </nav>`;
+
+    this.initialScrollY = window.scrollY;
+
+    // Delay attaching the scroll listener slightly
+    // requestAnimationFrame waits for the next paint, often enough
+    requestAnimationFrame(() => {
+      window.addEventListener("scroll", this.boundHandleScroll, {
+        passive: true,
+      });
+    }, 200);
+  }
+
+  disconnectedCallback() {
+    // Clean up listener when element is removed from DOM
+    window.removeEventListener("scroll", this.boundHandleScroll);
+  }
+
+  _handleScroll() {
+    // Don't check scrolled until user actually scrolls
+    if (this.initialScroll) {
+      this.initialScroll = false;
+      return;
+    }
+
+    // Throttle the handler execution
+    if (this.isThrottled) return;
+
+    this.isThrottled = true;
+
+    setTimeout(() => {
+      this.isThrottled = false; // Reset throttle flag after delay
+
+      const isScrolled = window.scrollY > 10;
+
+      if (isScrolled) {
+        this.classList.add("scrolled-past-top");
+      } else {
+        // Remove class if not mobile OR not scrolled (or both)
+        this.classList.remove("scrolled-past-top");
+      }
+    }, 100);
   }
 }
 customElements.define("tr-header", Header);

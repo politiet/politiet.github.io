@@ -35,7 +35,6 @@
 
   /* All web components must have display value */
   tr-box,
-  tr-header,
   tr-footer,
   tr-verktoykasse,
   tr-accordion-content,
@@ -48,7 +47,6 @@
     display: inline-block;
   }
 
-  /* Styles for specific web components */
   tr-box {
     background-color: var(--box-background);
     padding: var(--box-padding);
