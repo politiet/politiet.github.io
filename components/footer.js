@@ -8,7 +8,8 @@ class Footer extends HTMLElement {
     this.innerHTML = /* html */ `
         <style>
           @layer common {
-            .tr-footer {
+            tr-footer {
+              display: block;
               background: var(--color-darkblue-500, #D0E2F3);
               padding: 3rem 1.5rem 5rem 1.25rem;
               
@@ -49,23 +50,21 @@ class Footer extends HTMLElement {
             }
           }
         </style>
-        <footer class="tr-footer">
-            <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
-            <nav>
-                <tr-fancy-link>
-                  <a href="/brukeropplevelse">BRUKEROPPLEVELSE</a>
-                </tr-fancy-link>
-                <tr-fancy-link>
-                  <a href="/team">TEAM</a>
-                </tr-fancy-link>
-                <tr-fancy-link>
-                  <a href="/teknologi">TEKNOLOGI</a>
-                </tr-fancy-link>
-                <tr-fancy-link>
-                  <a href="/folk">FOLK</a>
-                </tr-fancy-link>
-            </nav>
-        </footer>`;
+        <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
+        <nav>
+            <tr-fancy-link>
+              <a href="/brukeropplevelse">BRUKEROPPLEVELSE</a>
+            </tr-fancy-link>
+            <tr-fancy-link>
+              <a href="/team">TEAM</a>
+            </tr-fancy-link>
+            <tr-fancy-link>
+              <a href="/teknologi">TEKNOLOGI</a>
+            </tr-fancy-link>
+            <tr-fancy-link>
+              <a href="/folk">FOLK</a>
+            </tr-fancy-link>
+        </nav>`;
   }
 }
 customElements.define("tr-footer", Footer);

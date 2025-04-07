@@ -35,8 +35,6 @@
 
   /* All web components must have display value */
   tr-box,
-  tr-footer,
-  tr-verktoykasse,
   tr-accordion-content,
   tr-accordion-button,
   tr-fill-content {
