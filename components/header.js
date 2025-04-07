@@ -16,6 +16,7 @@ class Header extends HTMLElement {
             @layer common {
                 tr-header {
                     display: block;
+                    z-index: 50;
                     position: sticky;
                     top: 0;
                     background: var(--color-darkblue-500, #00263e);
