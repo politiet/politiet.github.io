@@ -13,15 +13,47 @@ class FillContent extends HTMLElement {
 customElements.define("tr-fill-content", FillContent);
 
 class FancyLink extends HTMLElement {
+  static observedAttributes = ["data-active-url-match"];
+
   constructor() {
     super();
+  }
+
+  connectedCallback() {
+    this._checkActive();
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "data-active-url-match") {
+      this._checkActive();
+    }
+  }
+
+  _checkActive() {
+    const activeUrlMatch = this.getAttribute("data-active-url-match");
+    if (!activeUrlMatch) {
+      this._setIsNotActive();
+      return;
+    }
+
+    if (window.location.pathname.includes(activeUrlMatch)) {
+      this._setIsActive();
+    } else {
+      this._setIsNotActive();
+    }
+  }
+
+  _setIsActive() {
+    this.setAttribute("data-active", "true");
+  }
+
+  _setIsNotActive() {
+    this.removeAttribute("data-active");
   }
 }
 customElements.define("tr-fancy-link", FancyLink);
 
 class AccordionContent extends HTMLElement {
-  static observedAttributes = ["data-visible"];
-
   constructor() {
     super();
   }

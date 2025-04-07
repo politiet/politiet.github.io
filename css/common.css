@@ -40,11 +40,11 @@
   tr-fill-content {
     display: block;
   }
-
   tr-fancy-link {
     display: inline-block;
   }
 
+  /* Web components specific styling */
   tr-box {
     background-color: var(--box-background);
     padding: var(--box-padding);
@@ -61,6 +61,7 @@
     top: 3px;
     padding-bottom: 3px;
 
+    &[data-active],
     &:hover {
       border-color: var(--color-brightyellow, #fdda25);
     }

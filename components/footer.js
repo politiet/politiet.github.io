@@ -52,16 +52,16 @@ class Footer extends HTMLElement {
         </style>
         <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
         <nav>
-            <tr-fancy-link>
+            <tr-fancy-link data-active-url-match="/brukeropplevelse">
               <a href="/brukeropplevelse">BRUKEROPPLEVELSE</a>
             </tr-fancy-link>
-            <tr-fancy-link>
+            <tr-fancy-link data-active-url-match="/team">
               <a href="/team">TEAM</a>
             </tr-fancy-link>
-            <tr-fancy-link>
+            <tr-fancy-link data-active-url-match="/teknologi">
               <a href="/teknologi">TEKNOLOGI</a>
             </tr-fancy-link>
-            <tr-fancy-link>
+            <tr-fancy-link data-active-url-match="/folk">
               <a href="/folk">FOLK</a>
             </tr-fancy-link>
         </nav>`;
