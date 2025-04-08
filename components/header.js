@@ -20,7 +20,7 @@ class Header extends HTMLElement {
                     position: sticky;
                     top: 0;
                     background: var(--color-darkblue-500, #00263e);
-                    padding: 1rem 1.5rem 1rem 1.25rem;
+                    padding: .85rem 1.5rem 1rem 1.25rem;
                     color: white;
                     transition: row-gap 0.3s ease-in-out;
 

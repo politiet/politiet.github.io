@@ -57,9 +57,8 @@
 
   tr-fancy-link {
     border-bottom: 3px solid transparent;
-    position: relative;
-    top: 3px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 2px;
 
     &[data-active],
     &:hover {
