@@ -20,66 +20,9 @@
     <script type="module" src="/components/header.js"></script>
     <script type="module" src="/components/verktoykasse.js"></script>
     <script type="module" src="/components/footer.js"></script>
+    <script type="module" src="/components/retninger-header.js"></script>
 
     <style>
-      /* Section 1 */
-      .section-1 {
-        container: section-1 / inline-size;
-      }
-
-      .section-1-main-header {
-        font-size: 2em;
-      }
-
-      .section-1-content {
-        display: grid;
-      }
-
-      .section-1-image {
-        img {
-          width: 30rem;
-          height: auto;
-          margin: 0 auto;
-        }
-      }
-
-      @container main (min-width: 800px) {
-        .section-1 {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 2.5rem;
-        }
-
-        .section-1-main-header {
-          font-size: 2em;
-        }
-
-        .section-1-content {
-          flex: 1;
-          gap: 1.75rem;
-        }
-
-        .section-1-image {
-          flex: 1;
-        }
-      }
-
-      @container main (max-width: 800px) {
-        .section-1 {
-          display: grid;
-          gap: 1.75rem;
-        }
-
-        .section-1-content {
-          gap: 1rem;
-        }
-
-        .section-1-image {
-          order: -1;
-          text-align: center;
-        }
-      }
-
       /* Prinsipper */
 
       .prinsipper {
@@ -147,9 +90,9 @@
     <tr-header></tr-header>
     <tr-fill-content>
       <main>
-        <section class="section-1">
-          <div class="section-1-content">
-            <h1 class="section-1-main-header">Retning for Team</h1>
+        <tr-retninger-header>
+          <slot name="title">Retning for Team</slot>
+          <slot name="content">
             <p>
               Retning for team består av 6 viktige prinsipper. Alle prinsippene
               har som utgangspunkt i at personer med ulik kompetanse må
@@ -173,14 +116,8 @@
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="section-1-image">
-            <img
-              src="/images/politiapp.svg"
-              alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
-            />
-          </div>
-        </section>
+          </slot>
+        </tr-retninger-header>
         <section class="prinsipper">
           <h2>Prinsipper vi følger</h2>
           <ul class="prinsipper-liste">
