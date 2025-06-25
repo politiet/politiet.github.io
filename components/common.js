@@ -91,7 +91,7 @@ class AccordionButton extends HTMLElement {
     this.boundHandleClick = this._handleOnClick.bind(this);
 
     // Initialize
-    const openButton = this.querySelector('slot[name="open-button"]');
+    const openButton = this.querySelector('[slot="open-button"]');
     this.openButtonHTML = openButton
       ? Array.from(openButton.childNodes)
       : (() => {
@@ -105,7 +105,7 @@ class AccordionButton extends HTMLElement {
           return a;
         })();
 
-    const closeButton = this.querySelector('slot[name="close-button"]');
+    const closeButton = this.querySelector('[slot="close-button"]');
     this.closeButtonHTML = closeButton
       ? Array.from(closeButton.childNodes)
       : (() => {
