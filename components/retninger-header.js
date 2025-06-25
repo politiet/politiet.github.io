@@ -1,14 +1,24 @@
 class RetningerHeader extends HTMLElement {
   connectedCallback() {
-    const title = this.querySelector('slot[name="title"]');
-    const content = this.querySelector('slot[name="content"]');
+    const originalContent = {
+      title: this.querySelector('[slot="title"]'),
+      content: this.querySelector('[slot="content"]'),
+    };
 
-    const html = /* html */ `
+    const titleHTML = originalContent.title
+      ? this.getHTML(originalContent.title)
+      : "";
+    const contentHTML = originalContent.content
+      ? this.getHTML(originalContent.content)
+      : "";
+
+    // Replace the component's content
+    this.innerHTML = /* html */ `
       <style>
         @layer common {
           tr-retninger-header {
             container: section-1 / inline-size;
-            
+
             h1 {
               font-size: 2em;
             }
@@ -51,7 +61,7 @@ class RetningerHeader extends HTMLElement {
             tr-retninger-header {
               display: grid;
               gap: 1.75rem;
-              
+
               .content-wrapper {
                 gap: 1rem;
               }
@@ -65,8 +75,8 @@ class RetningerHeader extends HTMLElement {
         }
       </style>
       <div class="content-wrapper">
-        <h1>${title.getHTML()}</h1>
-        ${content.getHTML()}
+        ${titleHTML}
+        ${contentHTML}
       </div>
       <div class="image-wrapper">
         <img
@@ -74,8 +84,12 @@ class RetningerHeader extends HTMLElement {
           alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
         />
       </div>`;
+  }
 
-    this.innerHTML = html;
+  getHTML(element) {
+    return element.hasAttribute("data-inner-only")
+      ? element.innerHTML
+      : element.outerHTML;
   }
 }
 customElements.define("tr-retninger-header", RetningerHeader);
