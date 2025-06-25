@@ -24,7 +24,8 @@ class RetningHeader extends HTMLElement {
             }
 
             .content-wrapper {
-              display: grid;
+              display: flex;
+              flex-direction: column;
             }
 
             .image-wrapper {
@@ -96,6 +97,9 @@ customElements.define("tr-prinsipper-liste", RetningPrinsipperListe);
 
 class RetningPrinsipp extends HTMLElement {}
 customElements.define("tr-prinsipp", RetningPrinsipp);
+
+class RetningPrinsippSubtitle extends HTMLElement {}
+customElements.define("tr-prinsipp-subtitle", RetningPrinsippSubtitle);
 
 class RetningPrinsippBilde extends HTMLElement {}
 customElements.define("tr-prinsipp-bilde", RetningPrinsippBilde);
