@@ -1,3 +1,11 @@
+window.TR = {
+  getHTML(element) {
+    return element.hasAttribute("data-inner-only")
+      ? element.innerHTML
+      : element.outerHTML;
+  },
+};
+
 class Box extends HTMLElement {
   constructor() {
     super();

@@ -6,10 +6,10 @@ class RetningerHeader extends HTMLElement {
     };
 
     const titleHTML = originalContent.title
-      ? this.getHTML(originalContent.title)
+      ? TR.getHTML(originalContent.title)
       : "";
     const contentHTML = originalContent.content
-      ? this.getHTML(originalContent.content)
+      ? TR.getHTML(originalContent.content)
       : "";
 
     // Replace the component's content
@@ -84,12 +84,6 @@ class RetningerHeader extends HTMLElement {
           alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
         />
       </div>`;
-  }
-
-  getHTML(element) {
-    return element.hasAttribute("data-inner-only")
-      ? element.innerHTML
-      : element.outerHTML;
   }
 }
 customElements.define("tr-retninger-header", RetningerHeader);
