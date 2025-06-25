@@ -1,4 +1,4 @@
-@layer reset, common, utility;
+@layer reset, common, component, utility;
 
 :root {
   --box-background: white;

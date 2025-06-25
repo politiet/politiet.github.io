@@ -15,82 +15,19 @@
 
     <link href="/css/common.css" rel="stylesheet" />
     <link href="/css/subpage.css" rel="stylesheet" />
+    <link href="/css/retning.css" rel="stylesheet" />
     <script type="module" src="/components/common.js"></script>
     <script type="module" src="/components/header.js"></script>
     <script type="module" src="/components/header.js"></script>
     <script type="module" src="/components/verktoykasse.js"></script>
     <script type="module" src="/components/footer.js"></script>
-    <script type="module" src="/components/retninger.js"></script>
-
-    <style>
-      /* Prinsipper */
-
-      .prinsipper {
-        container: prinsipper / inline-size;
-
-        h2 {
-          padding-bottom: 1rem;
-          margin-bottom: 1rem;
-          border-bottom: 1px solid var(--faded-separator, #c9cee4);
-        }
-
-        .prinsipper-liste {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-
-          li {
-            column-gap: 4rem;
-            row-gap: 1rem;
-
-            &:not(:last-child) {
-              padding-bottom: 1.5rem;
-              margin-bottom: 1.5rem;
-              border-bottom: 1px solid var(--faded-separator, #c9cee4);
-            }
-
-            @container prinsipper (min-width: 700px) {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: space-between;
-            }
-
-            @container prinsipper (max-width: 700px) {
-              display: grid;
-            }
-          }
-
-          .prinsipper-bilde {
-            display: grid;
-            gap: 1rem;
-            height: fit-content;
-            flex-basis: 16rem;
-          }
-
-          .prinsipper-tekst {
-            flex: 1;
-
-            a {
-              display: flex;
-              align-items: center;
-              gap: 0.75rem;
-            }
-
-            @container prinsipper (min-width: 700px) {
-              padding-top: 1rem;
-            }
-
-            /* behold denne for å unngå syntax-highlighting feil i VSCode */
-          }
-        }
-      }
-    </style>
+    <script type="module" src="/components/retning.js"></script>
   </head>
   <body>
     <tr-header></tr-header>
     <tr-fill-content>
       <main>
-        <tr-retninger-header>
+        <tr-retning-header>
           <h1 slot="title">Retning for Team</h1>
           <div slot="content" data-inner-only>
             <p>
@@ -117,19 +54,19 @@
               </ul>
             </div>
           </div>
-        </tr-retninger-header>
-        <section class="prinsipper">
+        </tr-retning-header>
+        <tr-prinsipper>
           <h2>Prinsipper vi følger</h2>
-          <ul class="prinsipper-liste">
-            <li>
-              <div class="prinsipper-bilde">
+          <tr-prinsipper-liste>
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
                 <img
                   src="/images/organisasjon.svg"
                   alt="Tre personer omringet av en sirkel"
                 />
                 <h3>Vi jobber tverrfaglig</h3>
-              </div>
-              <div class="prinsipper-tekst">
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
                 <p style="margin-bottom: 1rem">
                   Vi vet hva som skal til for at alle kan dele meninger, ideer
                   og tanker uten frykt for å uten frykt for negative
@@ -153,14 +90,15 @@
                     contentSelector="#accordion-1"
                   ></tr-accordion-button>
                 </p>
-              </div>
-            </li>
-            <li>
-              <div class="prinsipper-bilde">
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
                 <img src="/images/analyse_mikroskop.svg" alt="Mikroskop" />
                 <h3>Vi lærer og ekserimenterer</h3>
-              </div>
-              <div class="prinsipper-tekst">
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
                 <p style="margin-bottom: 1rem">
                   Vi vet hva som skal til for at alle kan dele meninger, ideer
                   og tanker uten frykt for å uten frykt for negative
@@ -184,17 +122,18 @@
                     contentSelector="#accordion-2"
                   ></tr-accordion-button>
                 </p>
-              </div>
-            </li>
-            <li>
-              <div class="prinsipper-bilde">
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
                 <img
                   src="/images/organisasjon.svg"
                   alt="Tre personer omringet av en sirkel"
                 />
                 <h3>Vi jobber tverrfaglig</h3>
-              </div>
-              <div class="prinsipper-tekst">
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
                 <p style="margin-bottom: 1rem">
                   Vi vet hva som skal til for at alle kan dele meninger, ideer
                   og tanker uten frykt for å uten frykt for negative
@@ -218,17 +157,18 @@
                     contentSelector="#accordion-3"
                   ></tr-accordion-button>
                 </p>
-              </div>
-            </li>
-            <li>
-              <div class="prinsipper-bilde">
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
                 <img
                   src="/images/organisasjon.svg"
                   alt="Tre personer omringet av en sirkel"
                 />
                 <h3>Vi jobber tverrfaglig</h3>
-              </div>
-              <div class="prinsipper-tekst">
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
                 <p style="margin-bottom: 1rem">
                   Vi vet hva som skal til for at alle kan dele meninger, ideer
                   og tanker uten frykt for å uten frykt for negative
@@ -252,17 +192,18 @@
                     contentSelector="#accordion-4"
                   ></tr-accordion-button>
                 </p>
-              </div>
-            </li>
-            <li>
-              <div class="prinsipper-bilde">
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
                 <img
                   src="/images/organisasjon.svg"
                   alt="Tre personer omringet av en sirkel"
                 />
                 <h3>Vi jobber tverrfaglig</h3>
-              </div>
-              <div class="prinsipper-tekst">
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
                 <p style="margin-bottom: 1rem">
                   Vi vet hva som skal til for at alle kan dele meninger, ideer
                   og tanker uten frykt for å uten frykt for negative
@@ -286,17 +227,18 @@
                     contentSelector="#accordion-5"
                   ></tr-accordion-button>
                 </p>
-              </div>
-            </li>
-            <li>
-              <div class="prinsipper-bilde">
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
                 <img
                   src="/images/organisasjon.svg"
                   alt="Tre personer omringet av en sirkel"
                 />
                 <h3>Vi jobber tverrfaglig</h3>
-              </div>
-              <div class="prinsipper-tekst">
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
                 <p style="margin-bottom: 1rem">
                   Vi vet hva som skal til for at alle kan dele meninger, ideer
                   og tanker uten frykt for å uten frykt for negative
@@ -320,10 +262,10 @@
                     contentSelector="#accordion-6"
                   ></tr-accordion-button>
                 </p>
-              </div>
-            </li>
-          </ul>
-        </section>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+          </tr-prinsipper-liste>
+        </tr-prinsipper>
       </main>
     </tr-fill-content>
     <tr-verktoykasse></tr-verktoykasse>

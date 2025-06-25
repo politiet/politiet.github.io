@@ -6,26 +6,14 @@ window.TR = {
   },
 };
 
-class Box extends HTMLElement {
-  constructor() {
-    super();
-  }
-}
+class Box extends HTMLElement {}
 customElements.define("tr-box", Box);
 
-class FillContent extends HTMLElement {
-  constructor() {
-    super();
-  }
-}
+class FillContent extends HTMLElement {}
 customElements.define("tr-fill-content", FillContent);
 
 class FancyLink extends HTMLElement {
   static observedAttributes = ["data-active-url-match"];
-
-  constructor() {
-    super();
-  }
 
   connectedCallback() {
     this._checkActive();
@@ -62,10 +50,6 @@ class FancyLink extends HTMLElement {
 customElements.define("tr-fancy-link", FancyLink);
 
 class AccordionContent extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     const contentWrapperAttribute = "data-accordion-content-wrapper";
     let wrapper = this.querySelector(`[${contentWrapperAttribute}]`);
@@ -90,10 +74,6 @@ class AccordionButton extends HTMLElement {
    * @type ChildNode[] | Element
    */
   closeButtonHTML;
-
-  constructor() {
-    super();
-  }
 
   connectedCallback() {
     this.boundHandleClick = this._handleOnClick.bind(this);

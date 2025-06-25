@@ -1,4 +1,4 @@
-class RetningerHeader extends HTMLElement {
+class RetningHeader extends HTMLElement {
   connectedCallback() {
     const originalContent = {
       title: this.querySelector('[slot="title"]'),
@@ -15,8 +15,8 @@ class RetningerHeader extends HTMLElement {
     // Replace the component's content
     this.innerHTML = /* html */ `
       <style>
-        @layer common {
-          tr-retninger-header {
+        @layer component {
+          tr-retning-header {
             container: section-1 / inline-size;
 
             h1 {
@@ -37,7 +37,7 @@ class RetningerHeader extends HTMLElement {
           }
 
           @container main (min-width: 800px) {
-            tr-retninger-header {
+            tr-retning-header {
               display: flex;
               flex-wrap: wrap;
               gap: 2.5rem;
@@ -58,7 +58,7 @@ class RetningerHeader extends HTMLElement {
           }
 
           @container main (max-width: 800px) {
-            tr-retninger-header {
+            tr-retning-header {
               display: grid;
               gap: 1.75rem;
 
@@ -86,4 +86,19 @@ class RetningerHeader extends HTMLElement {
       </div>`;
   }
 }
-customElements.define("tr-retninger-header", RetningerHeader);
+customElements.define("tr-retning-header", RetningHeader);
+
+class RetningPrinsipper extends HTMLElement {}
+customElements.define("tr-prinsipper", RetningPrinsipper);
+
+class RetningPrinsipperListe extends HTMLElement {}
+customElements.define("tr-prinsipper-liste", RetningPrinsipperListe);
+
+class RetningPrinsipp extends HTMLElement {}
+customElements.define("tr-prinsipp", RetningPrinsipp);
+
+class RetningPrinsippBilde extends HTMLElement {}
+customElements.define("tr-prinsipp-bilde", RetningPrinsippBilde);
+
+class RetningPrinsippInnhold extends HTMLElement {}
+customElements.define("tr-prinsipp-innhold", RetningPrinsippInnhold);
