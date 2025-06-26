@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Retninger for Brukeropplevelse</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="/css/common.css" rel="stylesheet" />
+    <link href="/css/subpage.css" rel="stylesheet" />
+    <link href="/css/retning.css" rel="stylesheet" />
+    <script type="module" src="/components/common.js"></script>
+    <script type="module" src="/components/header.js"></script>
+    <script type="module" src="/components/verktoykasse.js"></script>
+    <script type="module" src="/components/footer.js"></script>
+    <script type="module" src="/components/retning.js"></script>
+  </head>
+  <body>
+    <tr-header></tr-header>
+    <tr-fill-content>
+      <main>
+        <tr-retning-header>
+          <h1 slot="title">Retning for Brukeropplevelse</h1>
+          <div slot="content" data-inner-only>
+            <div>
+              <h2 style="font-size: 1.4rem; margin-bottom: 0.25rem">Hva</h2>
+              <p style="margin-bottom: 1rem">
+                Retning for brukeropplevelse skal beskrive opplevelsen vi vil
+                jobbe for å levere - og opplevelsen vi ønsker å love alle
+                brukere av politiets produkter og tjenester.
+              </p>
+              <p style="margin-bottom: 1rem">
+                Brukeropplevelse er hvordan en tjeneste eller et produkt
+                oppleves i helhet. Denne påvirker hvordan politiet oppleves - og
+                er viktig for omdømmet og tilliten til politiet.
+              </p>
+            </div>
+            <div>
+              <h2 style="font-size: 1.4rem; margin-bottom: 0.25rem">
+                Hvorfor Politiets samfunnsoppdrag
+              </h2>
+              <p style="margin-bottom: 1rem">
+                For å kunne lykkes med oppdraget er vi helt avhengige av tillit,
+                både internt i etaten og i samfunnet forøverig. Denne tilliten
+                skaper vi bla. ved å jobbe med hvordan vi oppleves både digitalt
+                og fysisk.
+              </p>
+              <p style="margin-bottom: 1rem">
+                For å levere en brukeropplevelse som er i tråd med sånn politiet
+                ønsker å fremstå, trenger vi noe som veileder oss, og som gjøre
+                det lettere å vite hvilken retning vi skal dra
+              </p>
+            </div>
+          </div>
+        </tr-retning-header>
+        <tr-prinsipper>
+          <h2>Prinsipper vi følger</h2>
+          <tr-prinsipper-liste>
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
+                <img
+                  src="/images/mennesker-skjold.svg"
+                  class="ikon-med-padding"
+                  alt="To abstrakte mennesker bak et skjold"
+                />
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
+                <h3 style="margin-bottom: 1rem">Trygt og tillitsvekkende</h3>
+                <p style="margin-bottom: 1rem">
+                  Politiet er troverdige og evner å ivareta behov på tvers for å
+                  lage et trygt samfunn for alle.
+                </p>
+                <tr-accordion-content id="accordion-1">
+                  <p style="margin-bottom: 1rem">
+                    I digital produkt- og tjenesteutvikling betyr dette at:
+                  </p>
+                  <ol style="margin-bottom: 1rem">
+                    <li>
+                      Løsninger er lett å kjenne igjen med politiet som tydelig
+                      avsender.
+                    </li>
+                    <li>
+                      Informasjon behandles sikkert/ihht lover og regler og
+                      lekker ikke (mekanismer for
+                      personsikkerhet/informasjonsbehandling er innebygd i
+                      løsningene).
+                    </li>
+                    <li>
+                      Det er tydelig hvorfor vi trenger personinformasjon og
+                      hvordan denne behandles.
+                    </li>
+                    <li>
+                      Det er lett for bruker å finne nødvendig og relevant
+                      informasjon.
+                    </li>
+                    <li>Det er tydelig hva som skjer og hvorfor.</li>
+                  </ol>
+                </tr-accordion-content>
+                <p>
+                  <tr-accordion-button
+                    contentSelector="#accordion-1"
+                  ></tr-accordion-button>
+                </p>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
+                <img
+                  src="/images/vekt.svg"
+                  class="ikon-med-padding"
+                  alt="Vekt"
+                />
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
+                <h3 style="margin-bottom: 1rem">Seriøs og rettferdig</h3>
+                <p style="margin-bottom: 1rem">
+                  Politiet skal håndheve loven på en god måte og vise empati,
+                  forståelse og være lyttende.
+                </p>
+                <tr-accordion-content id="accordion-2">
+                  <p style="margin-bottom: 1rem">
+                    I digital produkt-og tjenesteutvikling betyr dette at:
+                  </p>
+                  <ol style="margin-bottom: 1rem">
+                    <li>Det er tydelig hva som skjer når og hvorfor.</li>
+                    <li>
+                      Dialogen ivaretas på en god måte, også i det digitale rom.
+                    </li>
+                    <li>
+                      Prosesser automatiseres der det er hensiktsmessige og hvor
+                      det bidrar til en bedre helhetlig løsning for brukeren.
+                    </li>
+                    <li>
+                      Løsningene er personlige og har en vennlig, tydelig tone
+                      of voice.
+                    </li>
+                    <li>
+                      Løsningene gir god informasjon og forklaringer der det
+                      trengs.
+                    </li>
+                  </ol>
+                </tr-accordion-content>
+                <p>
+                  <tr-accordion-button
+                    contentSelector="#accordion-2"
+                  ></tr-accordion-button>
+                </p>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
+                <img
+                  src="/images/personer-hjerte.svg"
+                  class="ikon-med-padding"
+                  alt="Familie med hjerte over"
+                />
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
+                <h3 style="margin-bottom: 1rem">Tilgjengelig og til stede</h3>
+                <p style="margin-bottom: 1rem">
+                  Politiet skal være lett å komme i kontakt med, til stede på
+                  relevante arenaer og i relevant/nyttig form (for brukere med
+                  ulike behov).
+                </p>
+                <tr-accordion-content id="accordion-3">
+                  <p style="margin-bottom: 1rem">
+                    I digital produkt-og tjenesteutvikling betyr dette at:
+                  </p>
+                  <ol style="margin-bottom: 1rem">
+                    <li>
+                      Løsninger kan brukes av alle og er tilpasset ulike
+                      situasjoner og funksjonsutfordringer.
+                    </li>
+                    <li>Løsninger er stabile i drift og går ikke ned.</li>
+                    <li>
+                      Hvis noe går feil, er det tydelig hvordan en kommer seg
+                      videre.
+                    </li>
+                    <li>
+                      Løsningene er basert på velkjente og gode
+                      navigasjonsprinsipper.
+                    </li>
+                    <li>
+                      Det er lett å kjenne seg igjen på tvers av tjenester.
+                    </li>
+                    <li>
+                      Informasjonen er tilpasset ulike brukere og deres
+                      situasjon.
+                    </li>
+                  </ol>
+                </tr-accordion-content>
+                <p>
+                  <tr-accordion-button
+                    contentSelector="#accordion-3"
+                  ></tr-accordion-button>
+                </p>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+          </tr-prinsipper-liste>
+        </tr-prinsipper>
+      </main>
+    </tr-fill-content>
+    <tr-verktoykasse></tr-verktoykasse>
+    <tr-footer></tr-footer>
+  </body>
+</html>
