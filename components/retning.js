@@ -50,6 +50,7 @@ class RetningHeader extends HTMLElement {
               .content-wrapper {
                 flex: 1;
                 gap: 1.75rem;
+                font-size: 1.3rem;
               }
 
               .image-wrapper {
