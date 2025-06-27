@@ -1,6 +1,31 @@
 @layer component {
   :root {
     --prinsipp-ikon-padding: 12px;
+    --subpage-max-width: 1096px;
+    --subpage-content-x-padding: 2rem;
+
+    @media (max-width: 600px) {
+      --subpage-content-x-padding: 1.33rem;
+      --subpage-content-x-padding: 1.33rem;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    max-width: var(--subpage-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: var(--subpage-content-x-padding, 2rem);
+    padding-right: var(--subpage-content-x-padding, 2rem);
+    display: grid;
+    gap: 4rem;
   }
 
   /* All web components must have display value */

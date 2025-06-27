@@ -1,0 +1,36 @@
+@layer component {
+  /* All web components must have display value */
+  tr-verktoykasse,
+  tr-verktoykasse-header,
+  tr-verktoykasse-content,
+  tr-verktoykasse-body {
+    display: block;
+  }
+
+  tr-verktoykasse {
+    background: var(--color-lightblue-300, #d0e2f3);
+
+    tr-verktoykasse-content {
+      padding: 2.5rem var(--subpage-content-x-padding, 2rem) 2.25rem;
+      max-width: var(--subpage-max-width);
+      margin: 0 auto;
+    }
+
+    tr-verktoykasse-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+
+      img {
+        width: 90px;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}
