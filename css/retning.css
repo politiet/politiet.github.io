@@ -5,6 +5,8 @@
 
   /* All web components must have display value */
   tr-retning-header,
+  tr-retning-header-content,
+  tr-retning-header-image,
   tr-prinsipper,
   tr-prinsipper-liste,
   tr-prinsipp,
@@ -12,6 +14,57 @@
   tr-prinsipp-bilde,
   tr-prinsipp-innhold {
     display: block;
+  }
+
+  tr-retning-header {
+    container: retning-header2 / inline-size;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    tr-retning-header-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    tr-retning-header-image {
+      img {
+        width: 30rem;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+
+    @container main (min-width: 800px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+
+      tr-retning-header-content {
+        flex: 1;
+        gap: 1.75rem;
+        font-size: 1.3rem;
+      }
+
+      tr-retning-header-image {
+        flex: 1;
+      }
+    }
+
+    @container main (max-width: 800px) {
+      display: grid;
+      gap: 1.75rem;
+
+      tr-retning-header-content {
+        gap: 1rem;
+      }
+
+      tr-retning-header-image {
+        order: -1;
+        text-align: center;
+      }
+    }
   }
 
   tr-prinsipper {

@@ -21,14 +21,22 @@
     <script type="module" src="/components/verktoykasse.js"></script>
     <script type="module" src="/components/footer.js"></script>
     <script type="module" src="/components/retning.js"></script>
+
+    <style>
+      @container main (min-width: 800px) {
+        tr-retning-header2 h1 {
+          font-size: 1.8em;
+        }
+      }
+    </style>
   </head>
   <body>
     <tr-header></tr-header>
     <tr-fill-content>
       <main>
         <tr-retning-header>
-          <h1 slot="title">Retning for Brukeropplevelse</h1>
-          <div slot="content" data-inner-only>
+          <tr-retning-header-content>
+            <h1>Retning for Brukeropplevelse</h1>
             <div>
               <h2 style="font-size: 1.4rem; margin-bottom: 0.25rem">Hva</h2>
               <p style="margin-bottom: 1rem">
@@ -58,7 +66,8 @@
                 det lettere å vite hvilken retning vi skal dra
               </p>
             </div>
-          </div>
+          </tr-retning-header-content>
+          <tr-retning-header-image></tr-retning-header-image>
         </tr-retning-header>
         <tr-prinsipper>
           <h2>Prinsipper vi følger</h2>
