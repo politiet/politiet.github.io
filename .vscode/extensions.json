@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "bierner.comment-tagged-templates",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "ms-vscode.live-server"
   ]
 }
