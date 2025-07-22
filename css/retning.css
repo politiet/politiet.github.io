@@ -72,7 +72,7 @@
         font-size: 1.3rem;
       }
 
-      tr-retning-header-image {
+      tr-retning-header-image:not([data-no-flex]) {
         flex: 1;
       }
     }
