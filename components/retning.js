@@ -4,16 +4,7 @@ customElements.define("tr-retning-header", RetningHeader);
 class RetningHeaderContent extends HTMLElement {}
 customElements.define("tr-retning-header-content", RetningHeaderContent);
 
-class RetningHeaderImage extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = /* html */ `
-      <img
-        src="/images/politiapp.svg"
-        alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
-      />
-    `;
-  }
-}
+class RetningHeaderImage extends HTMLElement {}
 customElements.define("tr-retning-header-image", RetningHeaderImage);
 
 class RetningPrinsipper extends HTMLElement {}
