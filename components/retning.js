@@ -7,6 +7,12 @@ customElements.define("tr-retning-header-content", RetningHeaderContent);
 class RetningHeaderImage extends HTMLElement {}
 customElements.define("tr-retning-header-image", RetningHeaderImage);
 
+class RetningHeaderContentImage extends HTMLElement {}
+customElements.define(
+  "tr-retning-header-content-image",
+  RetningHeaderContentImage
+);
+
 class RetningPrinsipper extends HTMLElement {}
 customElements.define("tr-prinsipper", RetningPrinsipper);
 

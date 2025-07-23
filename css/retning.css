@@ -31,6 +31,7 @@
   /* All web components must have display value */
   tr-retning-header,
   tr-retning-header-content,
+  tr-retning-header-content-image,
   tr-retning-header-image,
   tr-prinsipper,
   tr-prinsipper-liste,
@@ -72,8 +73,35 @@
         font-size: 1.3rem;
       }
 
-      tr-retning-header-image:not([data-no-flex]) {
+      tr-retning-header-image[data-only-mobile],
+      tr-retning-header-content-image[data-only-mobile] {
+        display: none;
+      }
+
+      tr-retning-header-image:not([data-no-grow]) {
         flex: 1;
+      }
+
+      tr-retning-header-content-image {
+        &[data-image-orientation="portrait"] {
+          img {
+            height: 30rem;
+            width: auto;
+          }
+        }
+
+        &:not([data-image-orientation="portrait"]) {
+          img {
+            width: 25rem;
+            height: auto;
+          }
+        }
+
+        img {
+          float: right;
+          margin-left: 3rem;
+          margin-bottom: 1rem;
+        }
       }
     }
 
@@ -85,9 +113,41 @@
         gap: 1rem;
       }
 
+      tr-retning-header-image[data-only-desktop],
+      tr-retning-header-content-image[data-only-desktop] {
+        display: none;
+      }
+
       tr-retning-header-image {
         order: -1;
         text-align: center;
+      }
+
+      tr-retning-header-content-image {
+        &:not([data-image-orientation="portrait"]) {
+          img {
+            width: 28rem;
+            height: auto;
+          }
+        }
+
+        img {
+          margin: 1rem auto 2rem;
+        }
+      }
+    }
+
+    /**
+     * To prevent portrait images from always reserving a specific height on very small screens
+     */
+    @container main (max-width: 800px) and (min-width: 400px) {
+      tr-retning-header-content-image {
+        &[data-image-orientation="portrait"] {
+          img {
+            height: 20rem;
+            width: auto;
+          }
+        }
       }
     }
   }
