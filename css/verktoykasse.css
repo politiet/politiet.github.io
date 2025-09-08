@@ -32,5 +32,12 @@
         font-size: 1.75rem;
       }
     }
+
+    tr-verktoykasse-body {
+      h2 {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
   }
 }

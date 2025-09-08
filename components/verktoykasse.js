@@ -20,7 +20,7 @@ class VerktoykasseBody extends HTMLElement {
       this.innerHTML ||
       /* html */ `
           <p style="margin-bottom: 1rem;">Vi vet hva som skal til for at alle kan dele meninger, ideer og tanker uten frykt for å uten frykt for negative konsekvenser for sin egen stilling eller omdømme. Trygghet skaper grobunn for kreativitet, innovasjon, læring og kontinuerlig forbedring.</p>
-          <h2 style="font-size: 1rem; font-weight: 500;">Maler i Miro:</h2>
+          <h2>Maler i Miro:</h2>
           <ul>
               <li>Brukerintervju</li>
               <li>Brukerobserveringer</li>
