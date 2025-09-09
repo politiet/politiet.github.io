@@ -110,22 +110,22 @@ class Header extends HTMLElement {
         </style>
         <a class="retninger-logo" href="/">
             <img src="/images/logo.svg" alt="" style="height: 1.75rem; width: auto;" />
-            <tr-fancy-link>
+            <tr-fancy-link data-active-url-match="/">
                 <span style="font-size: 1.2rem;">Retninger</span>
             </tr-fancy-link>
         </a>
         <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
         <nav>
-            <tr-fancy-link data-active-url-match="/brukeropplevelse">
+            <tr-fancy-link data-active-url-match="/brukeropplevelse/">
                 <a href="/brukeropplevelse">Brukeropplevelse</a>
             </tr-fancy-link>
-            <tr-fancy-link data-active-url-match="/team">
+            <tr-fancy-link data-active-url-match="/team/">
                 <a href="/team">Team</a>
             </tr-fancy-link>
-            <tr-fancy-link data-active-url-match="/teknologi">
+            <tr-fancy-link data-active-url-match="/teknologi/">
                 <a href="/teknologi">Teknologi</a>
             </tr-fancy-link>
-            <tr-fancy-link data-active-url-match="/folk">
+            <tr-fancy-link data-active-url-match="/folk/">
                 <a href="/folk">Folk</a>
             </tr-fancy-link>
         </nav>`;

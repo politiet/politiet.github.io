@@ -27,12 +27,12 @@ class FancyLink extends HTMLElement {
 
   _checkActive() {
     const activeUrlMatch = this.getAttribute("data-active-url-match");
-    if (!activeUrlMatch) {
+    if (activeUrlMatch == null) {
       this._setIsNotActive();
       return;
     }
 
-    if (window.location.pathname.includes(activeUrlMatch)) {
+    if (window.location.pathname === activeUrlMatch) {
       this._setIsActive();
     } else {
       this._setIsNotActive();
