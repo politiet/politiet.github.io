@@ -13,85 +13,11 @@
       rel="stylesheet"
     />
 
+    <link href="/css/common.css" rel="stylesheet" />
+    <script type="module" src="/components/header.js"></script>
+    <script type="module" src="/components/common.js"></script>
+
     <style>
-      /* CSS Reset */
-      /* 1. Use a more-intuitive box-sizing model */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      /* 2. Remove default margin */
-      * {
-        margin: 0;
-      }
-      body {
-        /* 3. Add accessible line-height */
-        line-height: 1.5;
-        /* 4. Improve text rendering */
-        -webkit-font-smoothing: antialiased;
-      }
-      /* 5. Improve media defaults */
-      img,
-      picture,
-      video,
-      canvas,
-      svg {
-        display: block;
-        max-width: 100%;
-      }
-      /* 6. Inherit fonts for form controls */
-      input,
-      button,
-      textarea,
-      select {
-        font: inherit;
-      }
-      /* 7. Avoid text overflows */
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        overflow-wrap: break-word;
-      }
-      /* 8. Improve line wrapping */
-      p {
-        text-wrap: pretty;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        text-wrap: balance;
-      }
-      /*
-        9. Create a root stacking context
-        */
-      #root,
-      #__next {
-        isolation: isolate;
-      }
-
-      /* Application CSS*/
-      body {
-        font-family: Roboto;
-      }
-
-      main {
-        container: main / inline-size;
-      }
-
-      .box {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 1rem;
-      }
-
       /* Section 1 */
       .section-1 {
         container: section-1 / inline-size;
@@ -209,39 +135,18 @@
     </style>
   </head>
   <body>
-    <header style="display: grid; gap: 1.5rem; padding: 2rem">
-      <div
-        style="
-          display: flex;
-          gap: 2rem;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <h1 style="text-transform: uppercase; color: #00263e">Retninger</h1>
-        <img
-          src="images/politiet_logo.jpg"
-          alt="Politiets logo"
-          style="height: 2.5rem; width: auto"
-        />
-      </div>
-      <p style="font-size: 20px">
-        Retningene i PIT skal sikre at vi lager gode og trygge tjenester som
-        bidrar til å løse samfunnsoppdraget
-      </p>
-    </header>
+    <tr-header></tr-header>
     <main
       style="
         padding: 2rem;
-        background: #d0e2f3;
+        background: var(--color-lightblue-300, #d0e2f3);
         display: grid;
         gap: 2rem;
         grid-template-columns: repeat(2, 1fr);
       "
     >
-      <section
-        class="box section-1"
+      <tr-box
+        class="section-1"
         style="
           display: grid;
           gap: 2rem;
@@ -252,7 +157,7 @@
         <div class="section-1-top-container">
           <div class="section-1-top-item">
             <img
-              src="images/innbygger.svg"
+              src="/images/innbygger.svg"
               alt="Mann som smiler"
               class="section-1-top-item-image section-1-top-item-1-image"
             />
@@ -263,7 +168,7 @@
           </div>
           <div class="section-1-top-item">
             <img
-              src="images/politidame.svg"
+              src="/images/politidame.svg"
               alt="Politidame som snakker i politiradioen"
               class="section-1-top-item-image section-1-top-item-2-image"
             />
@@ -273,12 +178,14 @@
             </p>
           </div>
         </div>
-        <div style="height: 2px; background: #d0e2f3"></div>
+        <div
+          style="height: 2px; background: var(--color-lightblue-300, #d0e2f3)"
+        ></div>
         <section style="display: grid; gap: 2rem">
           <p>
             Vi ønsker å levere tjenester hvor
-            <strong>BRUKEROPPLEVELSEN</strong> bidrar til at politiet oppfattes
-            som
+            <strong><a href="/brukeropplevelse">BRUKEROPPLEVELSEN</a></strong>
+            bidrar til at politiet oppfattes som
           </p>
           <div class="section-1-text-cols-container">
             <p>
@@ -298,10 +205,12 @@
             </p>
           </div>
         </section>
-      </section>
-      <section class="box section-2">
+      </tr-box>
+      <tr-box class="section-2">
         <div style="display: grid; gap: 2rem">
-          <p>Vi jobber sammen i <strong>TEAM</strong> som</p>
+          <p>
+            Vi jobber sammen i <strong><a href="/team">TEAM</a></strong> som
+          </p>
           <ul>
             <li>er trygge</li>
             <li>forstår brukerens behov</li>
@@ -312,15 +221,18 @@
           </ul>
         </div>
         <img
-          src="images/politiapp.svg"
+          src="/images/politiapp.svg"
           alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
           style="width: 100%; max-width: 20rem; margin: 0 auto"
         />
-      </section>
+      </tr-box>
       <section class="section-3">
-        <section class="box" style="position: relative; padding-bottom: 12rem">
+        <tr-box style="position: relative; padding-bottom: 12rem">
           <div style="display: grid; gap: 2rem">
-            <p>Vi sikrer at vår <strong>TEKNOLOGI</strong> er</p>
+            <p>
+              Vi sikrer at vår
+              <strong><a href="/teknologi">TEKNOLOGI</a></strong> er
+            </p>
             <ul>
               <li>løst koblet</li>
               <li>datadrevet</li>
@@ -330,7 +242,7 @@
             </ul>
           </div>
           <img
-            src="images/kontordame.svg"
+            src="/images/kontordame.svg"
             alt="Dame ser på datamaskin skjerm. Grafisk illustrasjon av Norge i bakgrunnen."
             style="
               max-width: 18rem;
@@ -340,7 +252,7 @@
               left: 12%;
             "
           />
-        </section>
+        </tr-box>
       </section>
       <section
         class="section-4"
@@ -350,11 +262,11 @@
           position: relative;
         "
       >
-        <section
-          class="box"
-          style="display: grid; gap: 2rem; padding-bottom: 10rem"
-        >
-          <p>Du og jeg er <strong>FOLK</strong> i PIT. Sammen skal vi</p>
+        <tr-box style="display: grid; gap: 2rem; padding-bottom: 10rem">
+          <p>
+            Du og jeg er <strong><a href="/folk">FOLK</a></strong> i PIT. Sammen
+            skal vi
+          </p>
           <div style="display: flex; flex-wrap: wrap; gap: 3rem">
             <div>
               <ul>
@@ -387,9 +299,9 @@
               </ul>
             </div>
           </div>
-        </section>
+        </tr-box>
         <img
-          src="images/mannogdame_app.svg"
+          src="/images/mannogdame_app.svg"
           alt="Mann og dame ser på nettbrett"
           class="section-4-image"
         />

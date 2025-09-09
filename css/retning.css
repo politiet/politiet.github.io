@@ -1,0 +1,230 @@
+@layer component {
+  :root {
+    --prinsipp-ikon-padding: 12px;
+    --subpage-max-width: 1096px;
+    --subpage-content-x-padding: 2rem;
+
+    @media (max-width: 600px) {
+      --subpage-content-x-padding: 1.33rem;
+      --subpage-content-x-padding: 1.33rem;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    max-width: var(--subpage-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: var(--subpage-content-x-padding, 2rem);
+    padding-right: var(--subpage-content-x-padding, 2rem);
+    display: grid;
+    gap: 4rem;
+  }
+
+  /* All web components must have display value */
+  tr-retning-header,
+  tr-retning-header-content,
+  tr-retning-header-content-image,
+  tr-retning-header-image,
+  tr-prinsipper,
+  tr-prinsipper-liste,
+  tr-prinsipp,
+  tr-prinsipp-subtitle,
+  tr-prinsipp-bilde,
+  tr-prinsipp-innhold {
+    display: block;
+  }
+
+  tr-retning-header {
+    container: retning-header2 / inline-size;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    tr-retning-header-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    tr-retning-header-image {
+      img {
+        width: 30rem;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+
+    @container main (min-width: 800px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+
+      tr-retning-header-content {
+        flex: 1;
+        gap: 1.75rem;
+        font-size: 1.3rem;
+      }
+
+      tr-retning-header-image[data-only-mobile],
+      tr-retning-header-content-image[data-only-mobile] {
+        display: none;
+      }
+
+      tr-retning-header-image:not([data-no-grow]) {
+        flex: 1;
+      }
+
+      tr-retning-header-content-image {
+        &[data-image-orientation="portrait"] {
+          img {
+            height: 30rem;
+            width: auto;
+          }
+        }
+
+        &:not([data-image-orientation="portrait"]) {
+          img {
+            width: 25rem;
+            height: auto;
+          }
+        }
+
+        img {
+          float: right;
+          margin-left: 3rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    @container main (max-width: 800px) {
+      display: grid;
+      gap: 1.75rem;
+
+      tr-retning-header-content {
+        gap: 1rem;
+      }
+
+      tr-retning-header-image[data-only-desktop],
+      tr-retning-header-content-image[data-only-desktop] {
+        display: none;
+      }
+
+      tr-retning-header-image {
+        order: -1;
+        text-align: center;
+      }
+
+      tr-retning-header-content-image {
+        &:not([data-image-orientation="portrait"]) {
+          img {
+            width: 28rem;
+            height: auto;
+          }
+        }
+
+        img {
+          margin: 1rem auto 2rem;
+        }
+      }
+    }
+
+    /**
+     * To prevent portrait images from always reserving a specific height on very small screens
+     */
+    @container main (max-width: 800px) and (min-width: 400px) {
+      tr-retning-header-content-image {
+        &[data-image-orientation="portrait"] {
+          img {
+            height: 20rem;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  tr-prinsipper {
+    container: prinsipper / inline-size;
+
+    > h2 {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--faded-separator, #c9cee4);
+    }
+
+    tr-prinsipper-liste {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      tr-prinsipp {
+        column-gap: 2rem;
+        row-gap: 1rem;
+
+        &:not(:last-child) {
+          padding-bottom: 1.5rem;
+          margin-bottom: 1.5rem;
+          border-bottom: 1px solid var(--faded-separator, #c9cee4);
+        }
+
+        @container prinsipper (min-width: 700px) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding-left: var(--prinsipp-ikon-padding);
+        }
+
+        @container prinsipper (max-width: 700px) {
+          display: grid;
+        }
+      }
+
+      h3 {
+        font-size: 1.4rem;
+      }
+
+      tr-prinsipp-subtitle {
+        font-size: 1.2rem;
+        font-weight: normal;
+      }
+
+      tr-prinsipp-bilde {
+        display: grid;
+        gap: 1rem;
+        height: fit-content;
+        flex-basis: 6rem;
+
+        img {
+          height: 95px;
+
+          &.ikon-med-padding {
+            margin: calc(var(--prinsipp-ikon-padding) * -1);
+          }
+        }
+      }
+
+      tr-prinsipp-innhold {
+        flex: 1;
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+      }
+    }
+  }
+}

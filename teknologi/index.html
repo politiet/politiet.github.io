@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Retninger for Teknologi</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="/css/common.css" rel="stylesheet" />
+    <link href="/css/verktoykasse.css" rel="stylesheet" />
+    <link href="/css/retning.css" rel="stylesheet" />
+    <script type="module" src="/components/common.js"></script>
+    <script type="module" src="/components/header.js"></script>
+    <script type="module" src="/components/verktoykasse.js"></script>
+    <script type="module" src="/components/footer.js"></script>
+    <script type="module" src="/components/retning.js"></script>
+  </head>
+  <body>
+    <tr-header></tr-header>
+    <tr-fill-content>
+      <main>
+        <tr-retning-header>
+          <tr-retning-header-content>
+            <h1>Retning for Teknologi</h1>
+            <div>
+              <tr-retning-header-content-image
+                data-only-mobile="true"
+                data-image-orientation="portrait"
+              >
+                <img
+                  src="/images/Illustrasjon-tech.svg"
+                  alt="Dame sitter og ser på en skjerm."
+                />
+              </tr-retning-header-content-image>
+              <p>
+                PIT skal utvikle fremtidsrettede IT-tjenester i samarbeid med
+                brukerne. PIT skal ta et helhetlig ansvar for utvikling og
+                strategisk styring av teknologiutviklingen i politietaten for å
+                styrke politiets løsning av samfunnsoppdraget.
+              </p>
+            </div>
+          </tr-retning-header-content>
+          <tr-retning-header-image data-no-grow="true" data-only-desktop="true">
+            <img
+              src="/images/Illustrasjon-tech.svg"
+              alt="Dame sitter og ser på en skjerm."
+              style="width: 25rem"
+            />
+          </tr-retning-header-image>
+        </tr-retning-header>
+        <tr-prinsipper>
+          <h2>Prinsipper vi følger</h2>
+          <tr-prinsipper-liste>
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
+                <img
+                  src="/images/bobler.svg"
+                  class="ikon-med-padding"
+                  alt="Bobler i ulike størrelser"
+                />
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
+                <h3 style="margin-bottom: 1rem">Løse koblinger</h3>
+                <tr-prinsipp-subtitle style="margin-bottom: 1rem">
+                  Så vi slipper å vente på hverandre.
+                </tr-prinsipp-subtitle>
+                <p>
+                  Separasjon av sender og mottaker i tid og rom gir oss autonomi
+                  - vi kan velge når og hvor en skal mota informasjon det vil si
+                  foreta separasjon av sender og mottaker i tid og rom (i
+                  motsetning til synkron kommunikasjon som gir denne mulighet
+                  kun i rom).
+                </p>
+                <p style="margin-bottom: 1rem">
+                  Så vi slipper å vente på hverandre.
+                </p>
+                <tr-accordion-content id="accordion-1">
+                  <p style="margin-bottom: 1rem">
+                    Løse koblinger resulterer i høyere fleksibilitet av
+                    løsninger vi utvikler. Forskningen viser at asynkron
+                    tilnærming gir økt effektivitet generelt og gir høyere
+                    kvalitet av data og informasjonsdeling. Samtidig gir
+                    asynkronitet mulighet til å forenkle skalering for
+                    prosessering av data.
+                  </p>
+                  <p style="margin-bottom: 1rem">
+                    Det vi ønsker å oppnå er meningsfull kommunikasjon mellom
+                    systemer og kommunikasjon (according to their patterns) kan
+                    være både synkron og asynkron. Begge kommunikasjons-mønstrer
+                    er i bruk i dag, men vi velger å fokusere oss mer på den
+                    andre (dvs. asynkron) fordi den gir oss en del muligheter
+                    for å adressere hierarkisk sett høyere funksjoner.
+                  </p>
+                </tr-accordion-content>
+                <p>
+                  <tr-accordion-button
+                    contentSelector="#accordion-1"
+                  ></tr-accordion-button>
+                </p>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
+                <img
+                  src="/images/person-data.svg"
+                  alt="Mann med briller og enere og nuller rundt seg"
+                  class="ikon-med-padding"
+                />
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
+                <h3 style="margin-bottom: 1rem">Datadrevet politi</h3>
+                <tr-prinsipp-subtitle style="margin-bottom: 1rem">
+                  Så vi tar gode beslutninger - raskt!
+                </tr-prinsipp-subtitle>
+                <p style="margin-bottom: 1rem">
+                  Politiet skal være datadrevet. Det betyr blant annet at
+                  beslutninger skal skje på bakgrunn av data i motsetning til
+                  intuisjon, synsing eller personlig erfaring.
+                </p>
+                <tr-accordion-content id="accordion-2">
+                  <p style="margin-bottom: 1rem">
+                    Et datadrevet politi bruker systematisk innsamling, analyse
+                    og tolkning av data for å styre sin strategiske og operative
+                    beslutningstaking. Ved å basere beslutninger på objektive og
+                    relevante data kan virksomheten oppnå store fordeler.
+                  </p>
+                  <p style="margin-bottom: 1rem">
+                    Implementering av et datadrevet prinsipp krever:
+                  </p>
+                  <ul style="margin-bottom: 1rem">
+                    <li>
+                      Kvalitetsdata: Vi må sikre at data som samles inn er av
+                      høy kvalitet, relevante og pålitelige.
+                    </li>
+                    <li>
+                      Kultur og kompetanse: Vi må utvikle en kultur der data
+                      verdsettes, og ansatte har nødvendig kompetanse til å
+                      analysere og tolke data.
+                    </li>
+                    <li>
+                      Data i sentrum: Vi vil bevege oss fra å være
+                      applikasjonssentrert til å bli datasentert. Dette betyr at
+                      måten som vi håndterer data på også må endres, fra å være
+                      begrenset av applikasjonens rammer til å være fritt
+                      tilgjengelig som et produkt med spesifikke egenskaper. Det
+                      er dataene som skaper langsiktig verdi, og applikasjonene
+                      eksisterer kun for å behandle og forbedre dataene.
+                    </li>
+                    <li>
+                      Data må være FAIR (Findable, Accessible, Interoperable og
+                      Reusable): Fair Guiding Principles er prinsipper som
+                      fokuserer på maskinhåndtering av data slik at maskiner kan
+                      finne, få tilgang til, se data i sammenheng, og gjenbruke
+                      data uten kostbare spesialintegrasjoner.
+                    </li>
+                  </ul>
+                  <h4>Data som et produkt</h4>
+                  <p style="margin-bottom: 1rem">
+                    Valg av asynkron kommunikasjons-mønster gir oss bedre
+                    mulighet å definere "Data som et produkt". Det gir oss:
+                  </p>
+                  <ol style="margin-bottom: 1rem">
+                    <li>økt datakvalitet i våre og andre systemer</li>
+                    <li>
+                      gir mulighet for sammenstilling av data som gir mer verdi
+                    </li>
+                    <li>
+                      gir oversikt over data (i tilfelle at vi ønsker å bli
+                      datadrevet - noe vi definitivt har lyst på)
+                    </li>
+                    <li>gir oversikt om eierskap og ansvar</li>
+                    <li>
+                      inneholder meta-informasjon som beskriver data og gir
+                      sammenhengen de er samlet inn i, som blant annet lover og
+                      hjemler
+                    </li>
+                  </ol>
+                  <h4>Data katalog</h4>
+                  <p style="margin-bottom: 1rem">
+                    Nå sitter vi med data som er isolert (mtp løs kobling
+                    mønster), av høy kvalitet og hentet eller produsert i en
+                    bestemt kontekst i form av data som et produkt.
+                  </p>
+                  <p style="margin-bottom: 1rem">
+                    Nå må vi tilgjengeliggjøre data til konsumenter. Derfor
+                    trenger vi data katalog for å finne frem til hvilken data
+                    finnes hvor, hvem man kan kontakte og hvilke forutsetninger
+                    man har for å kunne ta i bruk dataen.
+                  </p>
+                  <ol style="margin-bottom: 1rem">
+                    <li>
+                      data som kan deles fra systemer bør beskrives i
+                      datakatalog
+                    </li>
+                    <li>
+                      Datakatalog inneholder informasjon om data som et produkt
+                    </li>
+                    <li>
+                      Den inneholder også informasjon om synkrone dataset (altså
+                      de som ikke er egnet for å være asynkrone) fordi det
+                      finnes en mange data sets som ikke er egnet for
+                      asynkronitet.
+                    </li>
+                  </ol>
+                  <h4>Data mesh</h4>
+                  <p style="margin-bottom: 1rem">
+                    Nå er data åpnet og demokratisert (det vil si
+                    tilgengliggjort), og da er det nødvendig å desentralisere
+                    den. Desentralisering er nødvendig for å fjerne flaskehals i
+                    form av store databaser eller andre type lagring. La oss se
+                    på det som etablering av mikrotjenester for data.
+                  </p>
+                  <p style="margin-bottom: 1rem">
+                    Data mesh utnytter prinsippene for domene orientert design
+                    for å levere en selvbetjent dataplattform som gir mulighet
+                    til brukere å abstrahere den tekniske kompleksiteten og
+                    fokusere på deres individuelle databrukstilfeller. For å
+                    muliggjøre samarbeid på tvers av domener, må data mesh
+                    standardisere formatering, styring, oppdagbarhet og
+                    metadatafelt, blant andre datafunksjoner. Dessuten, omtrent
+                    som en individuell mikrotjeneste, må hvert datadomene
+                    definere og bli enige om SLAer og kvalitetsmål som de vil
+                    "garantere" til forbrukerne
+                  </p>
+                </tr-accordion-content>
+                <p>
+                  <tr-accordion-button
+                    contentSelector="#accordion-2"
+                  ></tr-accordion-button>
+                </p>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
+                <img
+                  src="/images/bygning-skjold.svg"
+                  alt="Bygning med skjold"
+                  class="ikon-med-padding"
+                />
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
+                <h3 style="margin-bottom: 1rem">Pålitelige løsninger</h3>
+                <tr-prinsipp-subtitle style="margin-bottom: 1rem">
+                  Uansett hva som skjer!
+                </tr-prinsipp-subtitle>
+                <p>
+                  <strong>Zero Trust</strong>
+                </p>
+                <p style="margin-bottom: 1rem">
+                  Zero trust er et konsept bestående av en del prinsipper som
+                  hjelper oss å øke sikkerheten.
+                </p>
+                <tr-accordion-content id="accordion-3">
+                  <p style="margin-bottom: 1rem">
+                    Sikkerhetsfunksjoner bygges inn i alle lag av en løsning,
+                    noe som legger et større ansvar på teamene som kjenner
+                    løsningen best, og understøtter økt autonomi.
+                  </p>
+
+                  <p style="margin-bottom: 1rem">
+                    Ved å bygge sikkerhetsfunksjoner direkte inn i løsninger,
+                    benytte økt grad av standardisering, og i mindre grad være
+                    avhengig av perimetre som kontrolleres av andre så vil en
+                    raskere kunne etablere service mesh mellom forskjellige
+                    løsninger.
+                  </p>
+
+                  <h4>Helhetlig sikkerhetsmodell</h4>
+                  <p style="margin-bottom: 1rem">
+                    For en del tekniske behov har vi i dag laget mange
+                    forskjellige løsninger, eksempelvis for overføring av filer
+                    fra en sikkerhetssone til en annen. Ved å standardisere en
+                    del funksjoner kan vi redusere kompleksitet og mulighet for
+                    feil, samt øke evnen for observability.
+                  </p>
+
+                  <p style="margin-bottom: 1rem">
+                    En helhetlig sikkerhetsmodell vil også gjøre det enklere å
+                    lage løsninger som kan benytte ressurser fra både sky og
+                    egne datasentre, samt gjøre det enklere å flytte en løsning
+                    fra en driftsplattform til en annen.
+                  </p>
+
+                  <p style="margin-bottom: 1rem">
+                    Ved å ha tydelige felles modeller blir det lettere å gjøre
+                    ting rettere, og vi øker samtidig sikkerheten.
+                  </p>
+
+                  <h4>Målinger av endringsevne og kvalitet</h4>
+                  <p style="margin-bottom: 1rem">
+                    Løsningen(e) må understøtte nødvendig endringsdyktighet og
+                    kort leveringstid for ytterligere funksjonalitet. Ad-hoc
+                    unøyaktige målinger og rapportering av ferdiggrad gir oss
+                    ingen indikatorer på om vi har en endringsevne og om vi
+                    leverer kvalitet. Konseptet "observability" ligger til grunn
+                    for dette.
+                  </p>
+
+                  <p style="margin-bottom: 1rem">
+                    Det er tre pilarer som ligger til grunn for dette:
+                  </p>
+                  <ul style="margin-bottom: 1rem">
+                    <li>LogEvents</li>
+                    <li>Metrics</li>
+                    <li>Traces</li>
+                  </ul>
+
+                  <h4>Motstandsdyktige systemer</h4>
+                  <p style="margin-bottom: 1rem">
+                    Våre systemer, og særlig de som understøtter politiets
+                    operasjonelle evne, må ha høy oppetid og tilgjengelighet. De
+                    må derfor være motstandsdyktige (resilient) mot trusler som
+                    høy belastning, villet eller ikke, og angrep mot vår
+                    infrastruktur.
+                  </p>
+                  <p style="margin-bottom: 1rem">
+                    Dette innebærer følgende punkter:
+                  </p>
+
+                  <h4>Redundans</h4>
+                  <p style="margin-bottom: 1rem">
+                    Systemene våre skal ha tilstrekkelig redundans, både
+                    geografisk og i antall instanser, for å oppfylle
+                    tilgjengelighetskravet for systemet.
+                  </p>
+
+                  <h4>Dynamisk opp- og nedskalering</h4>
+                  <p style="margin-bottom: 1rem">
+                    Ved endringer i belastningen på systemene skal kapasiteten
+                    justeres tilsvarende, for å sikre gode svartider og ytelse.
+                    Cloud native-prinsippene tilsier at systemene skal designes
+                    på en slik måte at opp- og nedskaleringen skjer automatisk.
+                  </p>
+
+                  <h4>Automatisk feilhåndtering</h4>
+                  <p style="margin-bottom: 1rem">
+                    Systemene våre må være motstandsdyktige mot feilsituasjoner,
+                    både interne bugs og nedetid i eksterne avhengigheter. I
+                    tillegg til redundans må de derfor ha
+                    feilhåndteringsmekanismer slik som automatisk failover, og
+                    selv-reparerende egenskaper som f.eks retry-mekanismer og
+                    circuit breakers.
+                  </p>
+                  <p style="margin-bottom: 1rem">
+                    Disse mekanismene hjelper til med å minimere nedetid, og
+                    sikre høy tilgjengelighet.
+                  </p>
+
+                  <h4>Testing og kvalitet</h4>
+                  <ol style="margin-bottom: 1rem">
+                    <li>
+                      gjennomføres i hele utviklingsprosessen, fra behov til
+                      produksjonssatt kode
+                    </li>
+                    <li>
+                      tilrettelegge for at funksjonalitet og tekniske endringer
+                      kan produksjonsettes kontinuerlig
+                    </li>
+                    <li>
+                      automatisere tester så tidlig som mulig i utviklingen av
+                      en brukerhistorie. Det skal være flest tester på
+                      komponentnivå
+                    </li>
+                    <li>
+                      redusere risiko ved at automatiske komponenttester har høy
+                      testdekning og kjøres ved hver endring
+                    </li>
+                    <li>
+                      automatisere tester av brukernes arbeidsflyter i
+                      ende-til-ende-tester
+                    </li>
+                    <li>teste manuelt når det er behov for det</li>
+                    <li>
+                      bygge tillit til at løsningen kan håndtere
+                      avvikssituasjoner
+                    </li>
+                  </ol>
+                </tr-accordion-content>
+                <p>
+                  <tr-accordion-button
+                    contentSelector="#accordion-3"
+                  ></tr-accordion-button>
+                </p>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
+                <img
+                  src="/images/cloud-first.svg"
+                  alt="Sky med lås"
+                  class="ikon-med-padding"
+                />
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
+                <h3 style="margin-bottom: 1rem">Cloud first</h3>
+                <tr-prinsipp-subtitle style="margin-bottom: 1rem">
+                  I skyen når vi kan, hjemme når vi må.
+                </tr-prinsipp-subtitle>
+                <h4>Cloud first</h4>
+                <p style="margin-bottom: 1rem">
+                  Skytjenester gir oss tilgang på ubegrenset kapasitet, øker vår
+                  leveransetakt og lar oss utnytte innovasjon hos andre.
+                </p>
+                <tr-accordion-content id="accordion-4">
+                  <p style="margin-bottom: 1rem">
+                    Bruk av skytjenester lar oss realisere løsninger raskere
+                    (SaaS som f.eks administrative systemer).
+                  </p>
+                  <p style="margin-bottom: 1rem">
+                    Vi får tilgang på innovasjon som kan gjøre løsningene våre
+                    bedre.
+                  </p>
+                  <p style="margin-bottom: 1rem">
+                    Vi reduserer utbyggingsbehovet for egne datasentre (Kan
+                    heller øke kvaliteten på de datasenter-tjenestene vi
+                    tilbyr).
+                  </p>
+                </tr-accordion-content>
+                <p>
+                  <tr-accordion-button
+                    contentSelector="#accordion-4"
+                  ></tr-accordion-button>
+                </p>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+
+            <tr-prinsipp>
+              <tr-prinsipp-bilde>
+                <img
+                  src="/images/cloud-native.svg"
+                  alt="Sky og servere"
+                  class="ikon-med-padding"
+                />
+              </tr-prinsipp-bilde>
+              <tr-prinsipp-innhold>
+                <h3 style="margin-bottom: 1rem">Cloud native</h3>
+                <tr-prinsipp-subtitle style="margin-bottom: 1rem">
+                  Bygget for fleksibilitet og robusthet.
+                </tr-prinsipp-subtitle>
+                <h4>Cloud native</h4>
+                <p style="margin-bottom: 1rem">
+                  Skybaserte teknologier gir oss mulighet til å bygge og kjøre
+                  skalerbare applikasjoner i moderne, dynamiske miljøer som
+                  offentlige, private og hybride skyer.
+                </p>
+                <tr-accordion-content id="accordion-5">
+                  <p style="margin-bottom: 1rem">
+                    Containere, service mesh, mikrotjenester, immutable
+                    infrastructure og deklarative API-er eksemplifiserer denne
+                    tilnærmingen. Disse teknikkene muliggjør løst koblede
+                    systemer som er "resilient, managable and observable".
+                    Kombinert med robust automatisering gjør de (teknikkene) det
+                    mulig for ingeniører å gjøre store endringer ofte og
+                    forutsigbart med minimalt av hindringer.
+                  </p>
+                </tr-accordion-content>
+                <p>
+                  <tr-accordion-button
+                    contentSelector="#accordion-5"
+                  ></tr-accordion-button>
+                </p>
+              </tr-prinsipp-innhold>
+            </tr-prinsipp>
+          </tr-prinsipper-liste>
+        </tr-prinsipper>
+      </main>
+    </tr-fill-content>
+    <tr-verktoykasse>
+      <tr-verktoykasse-content>
+        <tr-verktoykasse-header></tr-verktoykasse-header>
+        <tr-verktoykasse-body>
+          <ul>
+            <li>Teknologiradar</li>
+            <li>Tekniske standarder (RFC)</li>
+            <li>Teambeslutninger (ADR)</li>
+            <li>Tech Community & Tech Open Space</li>
+          </ul>
+        </tr-verktoykasse-body>
+      </tr-verktoykasse-content>
+    </tr-verktoykasse>
+    <tr-footer></tr-footer>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+@layer reset, common, component, utility;
+
+:root {
+  --box-background: white;
+  --box-padding: 2rem;
+  --box-radius: 1rem;
+  --faded-separator: #c9cee4;
+  --color-darkblue-500: #00263e;
+  --color-lightblue-300: #d0e2f3;
+  --color-brightyellow: #fdda25;
+}
+
+@layer utility {
+  .tr-box-background {
+    background-color: var(--box-background);
+  }
+
+  .tr-box-padding {
+    padding: var(--box-padding);
+  }
+
+  .tr-box-radius {
+    border-radius: var(--box-radius);
+  }
+}
+
+@layer common {
+  body {
+    font-family: Roboto;
+  }
+
+  main {
+    container: main / inline-size;
+  }
+
+  /* All web components must have display value */
+  tr-box,
+  tr-accordion-content,
+  tr-accordion-button,
+  tr-fill-content {
+    display: block;
+  }
+
+  tr-fancy-link {
+    display: inline-block;
+  }
+
+  /* Web components specific styling */
+  tr-box {
+    background-color: var(--box-background);
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+  }
+
+  tr-fill-content {
+    flex: 1;
+  }
+
+  tr-fancy-link {
+    border-bottom: 3px solid transparent;
+    padding-top: 5px;
+    padding-bottom: 2px;
+
+    &[data-active],
+    &:hover {
+      border-color: var(--color-brightyellow, #fdda25);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  tr-accordion-button {
+    &:not([data-initialized]) {
+      > * {
+        visibility: hidden;
+      }
+    }
+  }
+
+  tr-accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+
+    &[data-visible] {
+      grid-template-rows: 1fr;
+    }
+
+    [data-accordion-content-wrapper] {
+      overflow: hidden;
+    }
+  }
+}
+
+@layer reset {
+  /* CSS Reset */
+  /* 1. Use a more-intuitive box-sizing model */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 5. Improve media defaults */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* 6. Inherit fonts for form controls */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* 7. Avoid text overflows */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  /* 9. Create a root stacking context */
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
