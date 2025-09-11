@@ -16,6 +16,25 @@
     <link href="/css/common.css" rel="stylesheet" />
     <link href="/css/verktoykasse.css" rel="stylesheet" />
     <link href="/css/retning.css" rel="stylesheet" />
+    <style>
+      /* Følgende stiler er på grunn av tomrom på toppen av bildet */
+      @container main (min-width: 800px) {
+        tr-retning-header-content-image {
+          img {
+            margin-top: -1.5rem;
+          }
+        }
+      }
+
+      /* Følgende stiler er på grunn av tomrom på toppen av bildet */
+      @container main (max-width: 800px) {
+        tr-retning-header-content-image {
+          img {
+            margin-top: -1rem;
+          }
+        }
+      }
+    </style>
     <script type="module" src="/components/common.js"></script>
     <script type="module" src="/components/header.js"></script>
     <script type="module" src="/components/verktoykasse.js"></script>
@@ -32,8 +51,8 @@
             <div>
               <tr-retning-header-content-image>
                 <img
-                  src="/images/Illustrasjon-team.svg"
-                  alt="En dame fremviser en presentasjon. En mann med en mobiltelefon og en dame med kaffekopp ser på."
+                  src="/images/politiapp.svg"
+                  alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
                 />
               </tr-retning-header-content-image>
               <p style="margin-bottom: 1rem">
