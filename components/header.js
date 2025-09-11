@@ -114,7 +114,9 @@ class Header extends HTMLElement {
                 <span style="font-size: 1.2rem;">Retninger</span>
             </tr-fancy-link>
         </a>
-        <img class="politi-logo" src="/images/politiet.svg" alt="Politiets logo" />
+        <a class="politi-logo" href="/">
+            <img src="/images/politiet.svg" alt="Politiets logo" />
+        </a>
         <nav>
             <tr-fancy-link data-active-url-match="/brukeropplevelse/">
                 <a href="/brukeropplevelse">Brukeropplevelse</a>
