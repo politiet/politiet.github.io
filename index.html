@@ -18,6 +18,15 @@
     <script type="module" src="/components/common.js"></script>
 
     <style>
+      :root {
+        --main-grid-gap: 2rem;
+      }
+
+      main {
+        display: grid;
+        gap: var(--main-grid-gap);
+      }
+
       /* Section 1 */
       .section-1 {
         container: section-1 / inline-size;
@@ -33,6 +42,11 @@
       }
 
       @container main (min-width: 950px) {
+        tr-box:not(.section-retninger) {
+          padding-left: 5rem;
+          padding-right: 5rem;
+        }
+
         .section-1 {
           margin-top: 1rem;
         }
@@ -50,7 +64,7 @@
         }
 
         .section-1-top-item-2-image {
-          top: -1rem;
+          top: -1.25rem;
         }
       }
 
@@ -107,14 +121,9 @@
       }
 
       /* Section 2 and 3 */
-      @container main (max-width: 1000px) {
-        .section-2,
-        .section-3 {
-          grid-column: 1 / span 2;
-        }
-
-        .section-3 {
-          padding-bottom: 3rem;
+      @container main (min-width: 950px) {
+        .section-2-3 {
+          grid-template-columns: repeat(2, 1fr);
         }
       }
 
@@ -129,13 +138,13 @@
         bottom: 2rem;
       }
 
-      @container section-4 (min-width: 500px) {
+      @container main (min-width: 500px) {
         .section-4-image {
           left: 38%;
         }
       }
 
-      @container section-4 (max-width: 500px) {
+      @container main (max-width: 500px) {
         .section-4-image {
           left: 17%;
         }
@@ -144,15 +153,8 @@
   </head>
   <body style="background: var(--color-lightblue-300, #d0e2f3)">
     <tr-header></tr-header>
-    <main
-      style="
-        padding: 2rem;
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(2, 1fr);
-      "
-    >
-      <tr-box class="section-retninger" style="grid-column: 1 / span 2">
+    <main style="padding: 2rem">
+      <tr-box class="section-retninger">
         <h1 style="margin-bottom: 1rem">Retninger</h1>
         <p>
           Retningene i PIT skal sikre at vi lager gode og trygge tjenester som
@@ -160,10 +162,7 @@
         </p>
       </tr-box>
 
-      <tr-box
-        class="section-1"
-        style="display: grid; gap: 2rem; grid-column: 1 / span 2"
-      >
+      <tr-box class="section-1" style="display: grid; gap: 2rem">
         <div class="section-1-top-container">
           <div class="section-1-top-item">
             <img
@@ -217,29 +216,35 @@
         </section>
       </tr-box>
 
-      <tr-box class="section-2">
-        <div style="display: grid; gap: 2rem">
-          <p>
-            Vi jobber sammen i <strong><a href="/team">TEAM</a></strong> som
-          </p>
-          <ul>
-            <li>er trygge</li>
-            <li>forstår brukerens behov</li>
-            <li>jobber tverrfaglig</li>
-            <li>skaper fart og flyt</li>
-            <li>eksperimenterer og lærer</li>
-            <li>jobber etter mål</li>
-          </ul>
-        </div>
-        <img
-          src="/images/politiapp.svg"
-          alt="Politimann som trykker på mobiltelefon, mens smilende dame med kaffekopp og en mann venter"
-          style="width: 100%; max-width: 20rem; margin: 0 auto"
-        />
-      </tr-box>
+      <div
+        class="section-2-3"
+        style="display: grid; gap: var(--main-grid-gap); margin-bottom: 3.5rem"
+      >
+        <tr-box class="section-2">
+          <div style="display: grid; gap: 2rem">
+            <p>
+              Vi jobber sammen i <strong><a href="/team">TEAM</a></strong> som
+            </p>
+            <ul>
+              <li>er trygge</li>
+              <li>forstår brukerens behov</li>
+              <li>jobber tverrfaglig</li>
+              <li>skaper fart og flyt</li>
+              <li>eksperimenterer og lærer</li>
+              <li>jobber etter mål</li>
+            </ul>
+          </div>
+          <img
+            src="/images/Illustrasjon-team.svg"
+            alt="En dame fremviser en presentasjon. En mann med en mobiltelefon og en dame med kaffekopp ser på."
+            style="width: 100%; max-width: 20rem; margin: 0 auto"
+          />
+        </tr-box>
 
-      <section class="section-3">
-        <tr-box style="position: relative; padding-bottom: 12rem">
+        <tr-box
+          class="section-3"
+          style="position: relative; padding-bottom: 16rem"
+        >
           <div style="display: grid; gap: 2rem">
             <p>
               Vi sikrer at vår
@@ -265,15 +270,11 @@
             "
           />
         </tr-box>
-      </section>
+      </div>
 
       <section
         class="section-4"
-        style="
-          grid-column: 1 / span 2;
-          padding-bottom: 15rem;
-          position: relative;
-        "
+        style="padding-bottom: 15rem; position: relative"
       >
         <tr-box style="display: grid; gap: 2rem; padding-bottom: 10rem">
           <p>
