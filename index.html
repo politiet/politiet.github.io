@@ -27,6 +27,20 @@
         gap: var(--main-grid-gap);
       }
 
+      .retning-header {
+        font-size: 1.2em;
+      }
+
+      .text-before-link-arrow {
+        padding-right: 0.5rem;
+      }
+
+      .section-2,
+      .section-3,
+      .section-4 > tr-box {
+        padding-top: 3rem;
+      }
+
       /* Section 1 */
       .section-1 {
         container: section-1 / inline-size;
@@ -41,6 +55,11 @@
         padding-top: calc(var(--box-padding) - 0.25rem);
       }
 
+      .section-1-text-wrapper {
+        display: grid;
+        gap: 2rem;
+      }
+
       @container main (min-width: 950px) {
         tr-box:not(.section-retninger) {
           padding-left: 5rem;
@@ -53,7 +72,7 @@
 
         .section-1-top-item {
           display: flex;
-          gap: 2rem;
+          gap: 1rem;
           align-items: center;
           width: calc(50% - 2.5rem);
           height: 8rem;
@@ -65,6 +84,11 @@
 
         .section-1-top-item-2-image {
           top: -1.25rem;
+        }
+
+        .section-1-text-wrapper {
+          padding-left: 2rem;
+          padding-right: 2rem;
         }
       }
 
@@ -106,6 +130,14 @@
           text-align: center;
         }
 
+        .section-1-utside {
+          gap: 1rem;
+        }
+
+        .section-1-top-item:not(.section-1-utside) {
+          gap: 2rem;
+        }
+
         .section-1-top-item-image {
           margin: 0 auto;
         }
@@ -120,33 +152,86 @@
         }
       }
 
+      .section-3-image {
+        position: absolute;
+        width: 18rem;
+        bottom: -3.5rem;
+      }
+
       /* Section 2 and 3 */
       @container main (min-width: 950px) {
+        .section-2-text-wrapper {
+          margin-bottom: 3rem;
+        }
+
         .section-2-3 {
           grid-template-columns: repeat(2, 1fr);
         }
+
+        .section-3 {
+          padding-bottom: 16rem;
+        }
+
+        .section-3-image {
+          left: 22%;
+        }
       }
 
-      /* Section 4 */
-      .section-4 {
-        container: section-4 / inline-size;
+      @container main (max-width: 950px) {
+        .section-2 {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+      }
+
+      @container main ((max-width: 950px) and (min-width: 700px)) {
+        .section-3 {
+          padding-bottom: 5rem;
+        }
+
+        .section-3-image {
+          right: 10%;
+        }
       }
 
       .section-4-image {
         position: absolute;
         width: 16rem;
-        bottom: 2rem;
+        bottom: 11rem;
+        right: 10%;
       }
 
-      @container main (min-width: 500px) {
+      /* Section 4 */
+      @container main (min-width: 700px) {
+        .section-4 > tr-box {
+          padding-bottom: 3rem;
+        }
+
         .section-4-image {
-          left: 38%;
+          bottom: 11rem;
+          right: 10%;
         }
       }
 
-      @container main (max-width: 500px) {
+      @container main (max-width: 700px) {
+        .section-3 {
+          padding-bottom: 13rem;
+        }
+
+        .section-3-image {
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+
+        .section-4 > tr-box {
+          padding-bottom: 20rem;
+        }
+
         .section-4-image {
-          left: 17%;
+          left: 50%;
+          transform: translate(-50%, 0);
         }
       }
     </style>
@@ -164,25 +249,25 @@
 
       <tr-box class="section-1" style="display: grid; gap: 2rem">
         <div class="section-1-top-container">
-          <div class="section-1-top-item">
+          <div class="section-1-top-item section-1-utside">
             <img
               src="/images/innbygger.svg"
               alt="Mann som smiler"
               class="section-1-top-item-image section-1-top-item-1-image"
             />
             <p>
-              <strong style="color: #00263e">U T S I D E</strong><br />
+              <strong style="color: #00263e">UTSIDE</strong><br />
               <span>Innbyggerne vi er til for</span>
             </p>
           </div>
-          <div class="section-1-top-item">
+          <div class="section-1-top-item section-1-innside">
             <img
               src="/images/politidame.svg"
               alt="Politidame som snakker i politiradioen"
               class="section-1-top-item-image section-1-top-item-2-image"
             />
             <p>
-              <strong style="color: #00263e">I N N S I D E </strong><br />
+              <strong style="color: #00263e">INNSIDE</strong><br />
               <span>Ansatte som leverer på samfunnsoppdraget</span>
             </p>
           </div>
@@ -190,11 +275,11 @@
         <div
           style="height: 2px; background: var(--color-lightblue-300, #d0e2f3)"
         ></div>
-        <section style="display: grid; gap: 2rem">
-          <p>
+        <section class="section-1-text-wrapper">
+          <p style="font-weight: bold">
             Vi ønsker å levere tjenester hvor
             <strong><a href="/brukeropplevelse">BRUKEROPPLEVELSEN</a></strong>
-            bidrar til at politiet oppfattes som
+            bidrar til at politiet oppfattes som:
           </p>
           <div class="section-1-text-cols-container">
             <p>
@@ -221,9 +306,12 @@
         style="display: grid; gap: var(--main-grid-gap); margin-bottom: 3.5rem"
       >
         <tr-box class="section-2">
-          <div style="display: grid; gap: 2rem">
-            <p>
-              Vi jobber sammen i <strong><a href="/team">TEAM</a></strong> som
+          <div class="section-2-text-wrapper" style="display: grid; gap: 1rem">
+            <p class="retning-header">
+              <a class="text-before-link-arrow" href="/team"
+                >Vi jobber sammen i TEAM som</a
+              >
+              <a href="/team" style="text-decoration: none">🡒</a>
             </p>
             <ul>
               <li>er trygge</li>
@@ -241,14 +329,13 @@
           />
         </tr-box>
 
-        <tr-box
-          class="section-3"
-          style="position: relative; padding-bottom: 16rem"
-        >
-          <div style="display: grid; gap: 2rem">
-            <p>
-              Vi sikrer at vår
-              <strong><a href="/teknologi">TEKNOLOGI</a></strong> er
+        <tr-box class="section-3" style="position: relative">
+          <div style="display: grid; gap: 1rem">
+            <p class="retning-header">
+              <a class="text-before-link-arrow" href="/teknologi"
+                >Vi sikrer at vår teknologi er</a
+              >
+              <a href="/teknologi" style="text-decoration: none">🡒</a>
             </p>
             <ul>
               <li>løst koblet</li>
@@ -259,15 +346,9 @@
             </ul>
           </div>
           <img
+            class="section-3-image"
             src="/images/kontordame.svg"
             alt="Dame ser på datamaskin skjerm. Grafisk illustrasjon av Norge i bakgrunnen."
-            style="
-              max-width: 18rem;
-              margin: 0 auto;
-              position: absolute;
-              bottom: -3.5rem;
-              left: 12%;
-            "
           />
         </tr-box>
       </div>
@@ -276,48 +357,30 @@
         class="section-4"
         style="padding-bottom: 15rem; position: relative"
       >
-        <tr-box style="display: grid; gap: 2rem; padding-bottom: 10rem">
-          <p>
-            Du og jeg er <strong><a href="/folk">FOLK</a></strong> i PIT.
+        <tr-box style="display: grid; gap: 1rem">
+          <p class="retning-header">
+            <a class="text-before-link-arrow" href="/folk"
+              >Du og jeg er FOLK i PIT</a
+            >
+            <a href="/folk" style="text-decoration: none">🡒</a>
           </p>
           <div style="display: flex; flex-wrap: wrap; gap: 3rem">
-            <div>
-              <ul>
-                <li>vi eier helheten sammen</li>
-                <li>lære og utvikle oss</li>
-                <li>samarbeide på tvers av fagområder</li>
-                <li>gi og få feedback</li>
-                <li>måle for å bli bedre</li>
-                <li>være åpne og transparente</li>
-                <li>ville hverandre vel</li>
-              </ul>
-            </div>
-            <div>
-              <b>Jeg bidrar ved å</b><br />
-              <ul>
-                <li>være nysgjerrig på andres perspektiv</li>
-                <li>bruke tid på problemforståelse</li>
-                <li>ta initiativ</li>
-                <li>dele</li>
-              </ul>
-            </div>
-            <div>
-              <b>Som leder vil jeg i tillegg</b><br />
-              <ul>
-                <li>sette retning</li>
-                <li>prioritere verdi</li>
-                <li>tilrettelegge</li>
-                <li>coache</li>
-                <li>gå foran som et godt eksempel</li>
-              </ul>
-            </div>
+            <ul>
+              <li>Vi eier helheten sammen</li>
+              <li>Jeg er nysgjerrig på andres perspektiv</li>
+              <li>Jeg deler kunnskapen min</li>
+              <li>Jeg gir og ønsker feedback</li>
+              <li>Jeg forstår hvor vi skal og utvikler meg</li>
+              <li>Som leder setter jeg retning</li>
+              <li>Som leder coacher jeg</li>
+            </ul>
           </div>
+          <img
+            src="/images/mannogdame_app.svg"
+            alt="Mann og dame ser på nettbrett"
+            class="section-4-image"
+          />
         </tr-box>
-        <img
-          src="/images/mannogdame_app.svg"
-          alt="Mann og dame ser på nettbrett"
-          class="section-4-image"
-        />
       </section>
     </main>
   </body>
