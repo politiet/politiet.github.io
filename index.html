@@ -42,10 +42,6 @@
       }
 
       /* Section 1 */
-      .section-1 {
-        container: section-1 / inline-size;
-      }
-
       .section-1-top-item-image {
         position: relative;
         height: 12rem;
@@ -152,28 +148,17 @@
         }
       }
 
-      .section-3-image {
-        position: absolute;
-        width: 18rem;
-        bottom: -3.5rem;
-      }
-
       /* Section 2 and 3 */
       @container main (min-width: 950px) {
-        .section-2-text-wrapper {
-          margin-bottom: 3rem;
-        }
-
         .section-2-3 {
           grid-template-columns: repeat(2, 1fr);
         }
+      }
 
-        .section-3 {
-          padding-bottom: 16rem;
-        }
-
-        .section-3-image {
-          left: 22%;
+      /* Section 2 */
+      @container main (min-width: 950px) {
+        .section-2-text-wrapper {
+          margin-bottom: 3rem;
         }
       }
 
@@ -183,6 +168,23 @@
           justify-content: space-between;
           flex-wrap: wrap;
           gap: 2rem;
+        }
+      }
+
+      /* Section 3 */
+      .section-3-image {
+        position: absolute;
+        width: 18rem;
+        bottom: -3.5rem;
+      }
+
+      @container main (min-width: 950px) {
+        .section-3 {
+          padding-bottom: 16rem;
+        }
+
+        .section-3-image {
+          left: 22%;
         }
       }
 
@@ -196,25 +198,6 @@
         }
       }
 
-      .section-4-image {
-        position: absolute;
-        width: 16rem;
-        bottom: 11rem;
-        right: 10%;
-      }
-
-      /* Section 4 */
-      @container main (min-width: 700px) {
-        .section-4 > tr-box {
-          padding-bottom: 3rem;
-        }
-
-        .section-4-image {
-          bottom: 11rem;
-          right: 10%;
-        }
-      }
-
       @container main (max-width: 700px) {
         .section-3 {
           padding-bottom: 13rem;
@@ -224,9 +207,42 @@
           left: 50%;
           transform: translate(-50%, 0);
         }
+      }
+
+      /* Section 4 */
+      .section-4 {
+        position: relative;
+      }
+
+      .section-4-image {
+        position: absolute;
+        width: 16rem;
+        bottom: 1rem;
+        right: 10%;
+      }
+
+      @container main (min-width: 700px) {
+        .section-4 {
+          padding-bottom: 6rem;
+        }
 
         .section-4 > tr-box {
-          padding-bottom: 20rem;
+          padding-bottom: 3rem;
+        }
+
+        .section-4-image {
+          bottom: 1rem;
+          right: 10%;
+        }
+      }
+
+      @container main (max-width: 700px) {
+        .section-4 {
+          padding-bottom: 7rem;
+        }
+
+        .section-4 > tr-box {
+          padding-bottom: 18rem;
         }
 
         .section-4-image {
@@ -353,10 +369,7 @@
         </tr-box>
       </div>
 
-      <section
-        class="section-4"
-        style="padding-bottom: 15rem; position: relative"
-      >
+      <section class="section-4">
         <tr-box style="display: grid; gap: 1rem">
           <p class="retning-header">
             <a class="text-before-link-arrow" href="/folk"
