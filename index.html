@@ -28,7 +28,15 @@
         height: 12rem;
       }
 
-      @container section-1 (min-width: 900px) {
+      .section-retninger {
+        padding-top: calc(var(--box-padding) - 0.25rem);
+      }
+
+      @container main (min-width: 950px) {
+        .section-1 {
+          margin-top: 1rem;
+        }
+
         .section-1-top-item {
           display: flex;
           gap: 2rem;
@@ -46,7 +54,7 @@
         }
       }
 
-      @container section-1 (max-width: 900px) and (min-width: 500px) {
+      @container main (max-width: 950px) and (min-width: 500px) {
         .section-1-top-item {
           display: grid;
           gap: 1rem;
@@ -58,7 +66,7 @@
         }
       }
 
-      @container section-1 (min-width: 500px) {
+      @container main (min-width: 500px) {
         .section-1-top-container {
           display: flex;
           gap: 5rem;
@@ -72,7 +80,7 @@
         }
       }
 
-      @container section-1 (max-width: 500px) {
+      @container main (max-width: 500px) {
         .section-1-top-container {
           display: grid;
           gap: 1rem;
@@ -134,25 +142,27 @@
       }
     </style>
   </head>
-  <body>
+  <body style="background: var(--color-lightblue-300, #d0e2f3)">
     <tr-header></tr-header>
     <main
       style="
         padding: 2rem;
-        background: var(--color-lightblue-300, #d0e2f3);
         display: grid;
         gap: 2rem;
         grid-template-columns: repeat(2, 1fr);
       "
     >
+      <tr-box class="section-retninger" style="grid-column: 1 / span 2">
+        <h1 style="margin-bottom: 1rem">Retninger</h1>
+        <p>
+          Retningene i PIT skal sikre at vi lager gode og trygge tjenester som
+          bidrar til å løse samfunnsoppdraget.
+        </p>
+      </tr-box>
+
       <tr-box
         class="section-1"
-        style="
-          display: grid;
-          gap: 2rem;
-          margin-top: 2rem;
-          grid-column: 1 / span 2;
-        "
+        style="display: grid; gap: 2rem; grid-column: 1 / span 2"
       >
         <div class="section-1-top-container">
           <div class="section-1-top-item">
@@ -206,6 +216,7 @@
           </div>
         </section>
       </tr-box>
+
       <tr-box class="section-2">
         <div style="display: grid; gap: 2rem">
           <p>
@@ -226,6 +237,7 @@
           style="width: 100%; max-width: 20rem; margin: 0 auto"
         />
       </tr-box>
+
       <section class="section-3">
         <tr-box style="position: relative; padding-bottom: 12rem">
           <div style="display: grid; gap: 2rem">
@@ -254,6 +266,7 @@
           />
         </tr-box>
       </section>
+
       <section
         class="section-4"
         style="
