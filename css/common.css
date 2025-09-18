@@ -45,7 +45,8 @@
     display: block;
   }
 
-  tr-fancy-link {
+  tr-fancy-link,
+  tr-arrow {
     display: inline-block;
   }
 
@@ -94,6 +95,14 @@
 
     [data-accordion-content-wrapper] {
       overflow: hidden;
+    }
+  }
+
+  tr-arrow {
+    img {
+      display: inline-block;
+      max-width: none;
+      margin: -0.55rem;
     }
   }
 }

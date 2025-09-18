@@ -193,3 +193,10 @@ class AccordionButton extends HTMLElement {
   }
 }
 customElements.define("tr-accordion-button", AccordionButton);
+
+class Arrow extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = /* html */ `<img src="/images/pil.svg" alt="Pil" />`;
+  }
+}
+customElements.define("tr-arrow", Arrow);
