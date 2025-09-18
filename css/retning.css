@@ -55,8 +55,19 @@
     }
 
     tr-retning-header-image {
+      &[data-size="small"] {
+        img {
+          width: 25rem;
+        }
+      }
+
+      &:not([data-size="small"]) {
+        img {
+          width: 30rem;
+        }
+      }
+
       img {
-        width: 30rem;
         height: auto;
         margin: 0 auto;
       }
