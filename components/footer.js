@@ -21,6 +21,11 @@ class Footer extends HTMLElement {
                 color: white;
               }
 
+              .politi-logo {
+                width: 115px;
+                height: 32px;
+              }
+
               @media (min-width: 600px) {
                 display: flex;
                 justify-content: space-between;
