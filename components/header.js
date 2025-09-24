@@ -53,6 +53,11 @@ class Header extends HTMLElement {
                         grid-column: 1 / 1;
                     }
 
+                    .politi-logo {
+                        width: 115px;
+                        height: 32px;
+                    }
+
                     @media (min-width: 1200px) {
                         .politi-logo {
                             position: absolute;
