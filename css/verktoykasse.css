@@ -12,7 +12,7 @@
 
     tr-verktoykasse-content {
       padding: 2.5rem var(--subpage-content-x-padding, 2rem) 2.25rem;
-      max-width: var(--subpage-max-width);
+      max-width: var(--page-max-width);
       margin: 0 auto;
     }
 
