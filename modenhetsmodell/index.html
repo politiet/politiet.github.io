@@ -1,11 +1,208 @@
+
 <!DOCTYPE html>
-<html>
-<title>Modenhetsmodell for Plattformteam</title>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2d2926">
+  <meta name="description" content="Modenhetsmodell for plattformteam og tilhørende veiledning, versjon 1.1.1.">
+  <title>Modenhetsmodell for plattformteam – Politiet</title>
+
+  <style>
+    :root {
+      --svart: #2d2926;
+      --gul: #fdda25;
+      --bakgrunn: #f5f5f3;
+      --hvit: #ffffff;
+      --kant: #dededb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--svart);
+      background: var(--bakgrunn);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--svart);
+      color: var(--hvit);
+      border-bottom: 6px solid var(--gul);
+    }
+
+    .header-inner,
+    main,
+    footer {
+      width: min(100% - 40px, 860px);
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      padding: 24px 0;
+    }
+
+    .brand {
+      color: var(--hvit);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .brand span {
+      color: var(--gul);
+    }
+
+    main {
+      padding-top: 64px;
+      padding-bottom: 72px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin-bottom: 36px;
+      font-size: 1.1rem;
+    }
+
+    .documents {
+      display: grid;
+      gap: 16px;
+    }
+
+    .document {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px;
+      background: var(--hvit);
+      border: 1px solid var(--kant);
+      border-left: 5px solid var(--gul);
+      border-radius: 4px;
+    }
+
+    .document h2 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+    }
+
+    .document p {
+      margin: 0;
+      color: #5f5d5c;
+      font-size: 0.95rem;
+    }
+
+    .link {
+      flex-shrink: 0;
+      display: inline-block;
+      padding: 12px 18px;
+      background: var(--svart);
+      color: var(--hvit);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+
+    .link:hover {
+      background: #4a4642;
+      text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #0072ce;
+      outline-offset: 4px;
+    }
+
+    footer {
+      padding: 20px 0;
+      border-top: 1px solid var(--kant);
+      color: #5f5d5c;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--svart);
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding-top: 40px;
+      }
+
+      .document {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
 <body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="https://politiet.github.io/">
+        POLITIET <span>|</span> PLATTFORM
+      </a>
+    </div>
+  </header>
 
-<a href="modenhetsmodell-1.1.0.jpg">Modenhetsmodell for Plattformteam</a> 
-<p></p>
-<a href="modenhetsmodell-veiledning-1.1.0.jpg">Modenhetsmodell for Plattformteam - Veiledning</a> 
+  <main>
+    <h1>Modenhetsmodell for plattformteam</h1>
 
+    <p class="intro">
+      Her finner du modenhetsmodellen og veiledningen som hjelper
+      oss med å vurdere og videreutvikle modenheten i våre plattformteam.
+    </p>
+
+    <section class="documents" aria-label="Dokumenter">
+
+      <article class="document">
+        <div>
+          <h2>Modenhetsmodell 1.1.1</h2>
+          <p>Selve modenhetsmodellen (PDF)</p>
+        </div>
+
+        <a class="link" href="./modenhetsmodell-1.1.1.pdf">
+          Åpne PDF →
+        </a>
+      </article>
+
+      <article class="document">
+        <div>
+          <h2>Veiledning 1.1.1</h2>
+          <p>Veiledning til bruk av modenhetsmodellen (PDF)</p>
+        </div>
+
+        <a class="link" href="./modenhetsmodell-veiledning-1.1.1.pdf">
+          Åpne PDF →
+        </a>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://politiet.github.io/">Tilbake til Retninger i PIT</a>
+  </footer>
 </body>
-</html> 
+</html>
